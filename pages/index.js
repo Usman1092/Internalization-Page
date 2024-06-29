@@ -6,7 +6,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Prevarrow from "../components/Prevarrow";
 import Nextarrow from "../components/Nextarrow";
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion";
+import { BsChevronRight } from "react-icons/bs";
+import { BsChevronLeft } from "react-icons/bs";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -46,6 +48,23 @@ export default function Home() {
       },
     ],
   };
+
+  const controls = useAnimation();
+
+  const handleClick = () => {
+    // Start the pop animation
+    controls.start({
+      scale: [1, 1.5, 1],
+      y: [0, -10, 0],
+      transition: { duration: 0.3 },
+    });
+
+    // Scroll the screen
+    window.scrollTo({
+      top: 800,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <div className=" first  w-full   md:w-auto flex flex-1 bg-bg-bg1 bg-cover bg-norepeat  overflow-hidden   h-[600px]">
@@ -54,13 +73,11 @@ export default function Home() {
             <div className="1">
               <div className="flex flex-row ml-6 space-x-4">
                 <motion.svg
-                initial={{x:-500}}
-                animate={{x:0}}
-                transition={
-                  {
-                    duration:"2",
-                    
-            }}
+                  initial={{ x: -500 }}
+                  animate={{ x: 0 }}
+                  transition={{
+                    duration: "2",
+                  }}
                   xmlns="http://www.w3.org/2000/svg"
                   width="60"
                   height="35"
@@ -125,13 +142,11 @@ export default function Home() {
                 </motion.svg>
 
                 <motion.svg
-                initial={{x:-500}}
-                animate={{x:0}}
-                transition={
-                  {
-                    duration:"2",
-                    
-            }}
+                  initial={{ x: -500 }}
+                  animate={{ x: 0 }}
+                  transition={{
+                    duration: "2",
+                  }}
                   id="Group_3385"
                   data-name="Group 3385"
                   xmlns="http://www.w3.org/2000/svg"
@@ -190,13 +205,11 @@ export default function Home() {
                 </motion.svg>
 
                 <motion.svg
-                initial={{x:-500}}
-                animate={{x:0}}
-                transition={
-                  {
-                    duration:"2",
-                    
-            }}
+                  initial={{ x: -500 }}
+                  animate={{ x: 0 }}
+                  transition={{
+                    duration: "2",
+                  }}
                   xmlns="http://www.w3.org/2000/svg"
                   width="60"
                   height="10"
@@ -215,13 +228,11 @@ export default function Home() {
             </div>
             <div className="2    hidden lg:block  ">
               <motion.svg
-                initial={{y:-500}}
-                animate={{y:0}}
-                transition={
-                  {
-                    duration:"2",
-                    
-            }}
+                initial={{ y: -500 }}
+                animate={{ y: 0 }}
+                transition={{
+                  duration: "2",
+                }}
                 xmlns="http://www.w3.org/2000/svg"
                 width="180"
                 height="40"
@@ -275,125 +286,11 @@ export default function Home() {
                   data-name="Group 4723"
                   transform="translate(-1284 -73)"
                 >
-                  <g initial={{x:1000}}
-                animate={{x:50}}
-                transition={
-                  {
-                    duration:"2",
-                    }}
-                    id="Group_3035"
-                    data-name="Group 3035"
-                    transform="translate(1594 79.988)"
-                  >
-                    <g
-                      id="Group_2964"
-                      data-name="Group 2964"
-                      transform="translate(0.016 0.016)"
-                    >
-                      <rect
-                        id="Rectangle_166"
-                        data-name="Rectangle 166"
-                        width="20"
-                        height="24"
-                        transform="translate(0 0)"
-                        fill="#102576"
-                      />
-                    </g>
-                    <g
-                      id="Group_2965"
-                      data-name="Group 2965"
-                      transform="translate(0.016 0.016)"
-                    >
-                      <path
-                        id="Path_7686"
-                        data-name="Path 7686"
-                        d="M3362.979,385.068h4.672l9.781,6.55v-6.55h8.381v6.549l9.776-6.549h4.671v3.127l-7.712,5.166h7.712v8.382h-7.712l7.712,5.166v3.127h-4.669l-9.778-6.549v6.549h-8.381v-6.552l-9.782,6.552h-4.67v-3.127l7.713-5.167h-7.713v-8.382h7.715l-7.715-5.167Z"
-                        transform="translate(-3362.979 -385.068)"
-                        fill="#fff"
-                      />
-                    </g>
-                    <g
-                      id="Group_2966"
-                      data-name="Group 2966"
-                      transform="translate(0.016 16.916)"
-                    >
-                      <path
-                        id="Path_7687"
-                        data-name="Path 7687"
-                        d="M3377.038,435.128v-.583h-2.013l-12.046,8.067h2.881Z"
-                        transform="translate(-3362.979 -434.545)"
-                        fill="#e50019"
-                      />
-                    </g>
-                    <g
-                      id="Group_2967"
-                      data-name="Group 2967"
-                      transform="translate(23.243 0.016)"
-                    >
-                      <path
-                        id="Path_7688"
-                        data-name="Path 7688"
-                        d="M3430.733,392.551v.584h2.008l12.046-8.067H3441.9Z"
-                        transform="translate(-3430.733 -385.068)"
-                        fill="#e50019"
-                      />
-                    </g>
-                    <g
-                      id="Group_2968"
-                      data-name="Group 2968"
-                      transform="translate(0.016 0.016)"
-                    >
-                      <path
-                        id="Path_7689"
-                        data-name="Path 7689"
-                        d="M3362.979,387l9.166,6.139h2.882l-12.047-8.067h0Z"
-                        transform="translate(-3362.979 -385.068)"
-                        fill="#e50019"
-                      />
-                    </g>
-                    <g
-                      id="Group_2969"
-                      data-name="Group 2969"
-                      transform="translate(25.253 16.916)"
-                    >
-                      <path
-                        id="Path_7690"
-                        data-name="Path 7690"
-                        d="M3436.863,434.545l12.044,8.067v-1.93l-9.164-6.138Z"
-                        transform="translate(-3436.863 -434.545)"
-                        fill="#e50019"
-                      />
-                    </g>
-                    <g
-                      id="Group_2970"
-                      data-name="Group 2970"
-                      transform="translate(0.016 0.016)"
-                    >
-                      <path
-                        id="Path_7691"
-                        data-name="Path 7691"
-                        d="M3384.136,395.038v-9.97h-5.03v9.97h-16.127v5.029h16.127v9.969h5.03v-9.969h16.124v-5.029Z"
-                        transform="translate(-3362.979 -385.068)"
-                        fill="#e50019"
-                      />
-                    </g>
-                    <g id="Group_2971" data-name="Group 2971">
-                      <path
-                        id="Path_7692"
-                        data-name="Path 7692"
-                        d="M3400.243,410.019h-37.313v-25h37.313Zm-37.28-.033h37.247V385.052h-37.247Z"
-                        transform="translate(-3362.929 -385.019)"
-                        fill="#1a1818"
-                      />
-                    </g>
-                  </g>
+      
 
-                  <path  initial={{x:1000}}
-                animate={{x:50}}
-                transition={
-                  {
-                    duration:"2",
-                    }}
+              
+
+                  <path  
                     id="Path_7582"
                     data-name="Path 7582"
                     d="M102.3,77.923H98.716v-1.3a5.761,5.761,0,0,0-11.522,0v1.3H83.607a1.1,1.1,0,0,0-1.1,1.1V92.46a3.41,3.41,0,0,0,3.406,3.406H99.995A3.41,3.41,0,0,0,103.4,92.46V79.022A1.1,1.1,0,0,0,102.3,77.923Zm-14.114-1.3a4.766,4.766,0,0,1,9.533,0v1.3H88.188ZM102.406,92.46a2.414,2.414,0,0,1-2.411,2.411H85.914A2.414,2.414,0,0,1,83.5,92.46V79.022a.1.1,0,0,1,.1-.1h3.586V81.04a1.244,1.244,0,1,0,1,0V78.918h9.533V81.04a1.244,1.244,0,1,0,.995,0V78.918H102.3a.1.1,0,0,1,.1.1Z"
@@ -499,321 +396,130 @@ export default function Home() {
                     </g>
                   </g>
                 </g>
-              </svg> */}
-          
-        
+              </svg>
+         */}
 
+              <motion.svg
+                initial={{ x: 1000 }}
+                animate={{ x: 50 }}
+                transition={{ duration: 1 }}
+                xmlns="http://www.w3.org/2000/svg"
+                width="292"
+                height="39"
+                viewBox="0 0 292 39"
+                className=" mr-5 hidden lg:block"
+              >
+                <g
+                  id="Group_4560"
+                  data-name="Group 4560"
+                  transform="translate(-1294 -74)"
+                >
+                  <text
+                    id="SUNDAY_12_FEBRUARY_2023"
+                    data-name="SUNDAY, 12 FEBRUARY 2023"
+                    transform="translate(1586 109)"
+                    fill="#be9f56"
+                    font-size="14"
+                    font-family="SegoeUI, Segoe UI"
+                    letter-spacing="0.15em"
+                  >
+                    <tspan x="-225.406" y="0">
+                      SUNDAY, 12 FEBRUARY 2023
+                    </tspan>
+                  </text>
+                  <g id="Group_4559" data-name="Group 4559">
+                    <text
+                      id="LONDON"
+                      transform="translate(1351 89)"
+                      fill="#fff"
+                      font-size="14"
+                      font-family="SegoeUI, Segoe UI"
+                      letter-spacing="0.15em"
+                    >
+                      <tspan x="0" y="0">
+                        ISLAMABAD{" "}
+                      </tspan>
+                    </text>
+                    <text
+                      id="_17:23"
+                      data-name="17:23"
+                      transform="translate(1294 89)"
+                      fill="#fff"
+                      font-size="14"
+                      font-family="SegoeUI, Segoe UI"
+                      letter-spacing="0.15em"
+                    >
+                      <tspan x="0" y="0">
+                        17:23
+                      </tspan>
+                    </text>
+                    <text
+                      id="UNITED_KINGDOM"
+                      data-name="UNITED KINGDOM"
+                      transform="translate(1587 89)"
+                      fill="#fff"
+                      font-size="14"
+                      font-family="SegoeUI, Segoe UI"
+                      letter-spacing="0.15em"
+                    >
+                      <tspan x="-145.05" y="0">
+                        {" "}
+                        PAKISTAN{" "}
+                      </tspan>
+                    </text>
+                  </g>
+                </g>
+              </motion.svg>
 
-  <motion.svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="500"
-    height="35"
-    viewBox="0 0 580.838 39"
-    initial={{ x: 1000 }}
-    animate={{ x: 50 }}
-    transition={{
-      duration: 2,
-    }}
-  >
-    <g id="Group_4723" data-name="Group 4723" transform="translate(-1284 -73)">
-      <motion.g
-        id="Group_3035"
-        data-name="Group 3035"
-        transform="translate(1594 79.988)"
-        initial={{ x: 1000 }}
-        animate={{ x: 50 }}
-        transition={{
-          duration: 2,
-        }}
-      >
-        <motion.g
-          id="Group_2964"
-          data-name="Group 2964"
-          transform="translate(0.016 0.016)"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <rect
-            id="Rectangle_166"
-            data-name="Rectangle 166"
-            width="20"
-            height="24"
-            transform="translate(0 0)"
-            fill="#102576"
-          />
-        </motion.g>
-        <motion.g
-          id="Group_2965"
-          data-name="Group 2965"
-          transform="translate(0.016 0.016)"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <path
-            id="Path_7686"
-            data-name="Path 7686"
-            d="M3362.979,385.068h4.672l9.781,6.55v-6.55h8.381v6.549l9.776-6.549h4.671v3.127l-7.712,5.166h7.712v8.382h-7.712l7.712,5.166v3.127h-4.669l-9.778-6.549v6.549h-8.381v-6.552l-9.782,6.552h-4.67v-3.127l7.713-5.167h-7.713v-8.382h7.715l-7.715-5.167Z"
-            transform="translate(-3362.979 -385.068)"
-            fill="#fff"
-          />
-        </motion.g>
-        <motion.g
-          id="Group_2966"
-          data-name="Group 2966"
-          transform="translate(0.016 16.916)"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <path
-            id="Path_7687"
-            data-name="Path 7687"
-            d="M3377.038,435.128v-.583h-2.013l-12.046,8.067h2.881Z"
-            transform="translate(-3362.979 -434.545)"
-            fill="#e50019"
-          />
-        </motion.g>
-        <motion.g
-          id="Group_2967"
-          data-name="Group 2967"
-          transform="translate(23.243 0.016)"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <path
-            id="Path_7688"
-            data-name="Path 7688"
-            d="M3430.733,392.551v.584h2.008l12.046-8.067H3441.9Z"
-            transform="translate(-3430.733 -385.068)"
-            fill="#e50019"
-          />
-        </motion.g>
-        <motion.g
-          id="Group_2968"
-          data-name="Group 2968"
-          transform="translate(0.016 0.016)"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <path
-            id="Path_7689"
-            data-name="Path 7689"
-            d="M3362.979,387l9.166,6.139h2.882l-12.047-8.067h0Z"
-            transform="translate(-3362.979 -385.068)"
-            fill="#e50019"
-          />
-        </motion.g>
-        <motion.g
-          id="Group_2969"
-          data-name="Group 2969"
-          transform="translate(25.253 16.916)"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <path
-            id="Path_7690"
-            data-name="Path 7690"
-            d="M3436.863,434.545l12.044,8.067v-1.93l-9.164-6.138Z"
-            transform="translate(-3436.863 -434.545)"
-            fill="#e50019"
-          />
-        </motion.g>
-        <motion.g
-          id="Group_2970"
-          data-name="Group 2970"
-          transform="translate(0.016 0.016)"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <path
-            id="Path_7691"
-            data-name="Path 7691"
-            d="M3384.136,395.038v-9.97h-5.03v9.97h-16.127v5.029h16.127v9.969h5.03v-9.969h16.124v-5.029Z"
-            transform="translate(-3362.979 -385.068)"
-            fill="#e50019"
-          />
-        </motion.g>
-        <motion.g
-          id="Group_2971"
-          data-name="Group 2971"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <path
-            id="Path_7692"
-            data-name="Path 7692"
-            d="M3400.243,410.019h-37.313v-25h37.313Zm-37.28-.033h37.247V385.052h-37.247Z"
-            transform="translate(-3362.929 -385.019)"
-            fill="#1a1818"
-          />
-        </motion.g>
-      </motion.g>
-
-      <motion.path
-        id="Path_7582"
-        data-name="Path 7582"
-        d="M102.3,77.923H98.716v-1.3a5.761,5.761,0,0,0-11.522,0v1.3H83.607a1.1,1.1,0,0,0-1.1,1.1V92.46a3.41,3.41,0,0,0,3.406,3.406H99.995A3.41,3.41,0,0,0,103.4,92.46V79.022A1.1,1.1,0,0,0,102.3,77.923Zm-14.114-1.3a4.766,4.766,0,0,1,9.533,0v1.3H88.188ZM102.406,92.46a2.414,2.414,0,0,1-2.411,2.411H85.914A2.414,2.414,0,0,1,83.5,92.46V79.022a.1.1,0,0,1,.1-.1h3.586V81.04a1.244,1.244,0,1,0,1,0V78.918h9.533V81.04a1.244,1.244,0,1,0,.995,0V78.918H102.3a.1.1,0,0,1,.1.1Z"
-        transform="translate(1600 8)"
-        fill="#fff"
-        stroke="#fff"
-        stroke-width="0.5"
-        initial={{ x: 1000 }}
-        animate={{ x: 50 }}
-        transition={{
-          duration: 2,
-        }}
-      />
-
-      <motion.g
-        id="Group_2867"
-        data-name="Group 2867"
-        transform="translate(1750 80)"
-        initial={{ x: 1000 }}
-        animate={{ x: 0 }}
-        transition={{
-          duration: 2,
-        }}
-      >
-        <motion.g
-          id="Group_2661"
-          data-name="Group 2661"
-          transform="translate(3.676 0)"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <path
-            id="Path_7580"
-            data-name="Path 7580"
-            d="M113.274,88.712a6.618,6.618,0,1,1,6.618-6.618A6.625,6.625,0,0,1,113.274,88.712Zm0-11.765a5.147,5.147,0,1,0,5.147,5.147A5.153,5.153,0,0,0,113.274,76.948Z"
-            transform="translate(-106.656 -75.477)"
-            fill="#fff"
-            stroke="#fff"
-            stroke-width="0.5"
-          />
-        </motion.g>
-        <motion.g
-          id="Group_2662"
-          data-name="Group 2662"
-          transform="translate(0 13.971)"
-          initial={{ x: 1000 }}
-          animate={{ x: 50 }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <path
-            id="Path_7581"
-            data-name="Path 7581"
-            d="M107.022,160.556a.735.735,0,0,1-.735-.735,8.824,8.824,0,0,0-17.616-.735h14.675a.735.735,0,1,1,0,1.471H87.169v-.735a10.294,10.294,0,0,1,20.588,0A.736.736,0,0,1,107.022,160.556Z"
-            transform="translate(-87.169 -149.527)"
-            fill="#fff"
-            stroke="#fff"
-            stroke-width="0.5"
-          />
-        </motion.g>
-      </motion.g>
-
-      <motion.g
-        id="Group_4560"
-        className="hidden lg:block"
-        data-name="Group 4560"
-        transform="translate(-8 -3)"
-        initial={{ x: 1000 }}
-        animate={{ x: 50 }}
-        transition={{
-          duration: 2,
-        }}
-      >
-        <text
-          id="Tuesday, 25 June 202423"
-          data-name="Tuesday, 25 June 2024"
-          transform="translate(1586 109)"
-          fill="#be9f56"
-          font-size="14"
-          font-family="SegoeUI, Segoe UI"
-          letter-spacing="0.15em"
-        >
-          <tspan x="-225.406" y="0">
-            Tuesday, 25 June 2024
-          </tspan>
-        </text>
-        <g id="Group_4559" data-name="Group 4559">
-          <text
-            id="PAKISTAN"
-            transform="translate(1351 89)"
-            fill="#fff"
-            font-size="14"
-            font-family="SegoeUI, Segoe UI"
-            letter-spacing="0.15em"
-          >
-            <tspan x="0" y="0">PAKISTAN</tspan>
-          </text>
-          <text
-            id="_17:23"
-            data-name="17:23"
-            transform="translate(1294 89)"
-            fill="#fff"
-            font-size="14"
-            font-family="SegoeUI, Segoe UI"
-            letter-spacing="0.15em"
-          >
-            <tspan x="0" y="0">4:14</tspan>
-          </text>
-          <text
-            id="UNITED_KINGDOM"
-            data-name="UNITED KINGDOM"
-            transform="translate(1586 89)"
-            fill="#fff"
-            font-size="14"
-            font-family="SegoeUI, Segoe UI"
-            letter-spacing="0.15em"
-          >
-            <tspan x="-144.051" y="0">ISLAMABAD CITY</tspan>
-          </text>
-        </g>
-      </motion.g>
-    </g>
-  </motion.svg>
-
-
-
-
+              <motion.div
+                initial={{ x: 1000 }}
+                animate={{ x: 50 }}
+                transition={{ duration: 2 }}
+              >
+                <Image
+                  src="/P.png"
+                  width={40}
+                  height={20}
+                  alt=" pak"
+                  className=" mr-5"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ x: 1000 }}
+                animate={{ x: 50 }}
+                transition={{ duration: 3 }}
+              >
+                <Image
+                  src="/bag.png"
+                  width={20}
+                  height={20}
+                  alt="bag"
+                  className="mr-5"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ x: 1000 }}
+                animate={{ x: 50 }}
+                transition={{ duration: 4 }}
+              >
+                <Image
+                  src="/user.png"
+                  width={20}
+                  height={20}
+                  alt="bag"
+                  className="mr-20"
+                />
+              </motion.div>
             </div>
           </div>
-          <motion.div 
-          initial={{x:-500}}
-                animate={{x:0}}
-                transition={
-                  {
-                    duration:"2",
-                    
-            }}  className=" Back  hidden lg:block  text-white mt-10 ml-8">
+          <motion.div
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{
+              duration: "2",
+            }}
+            className=" Back  hidden lg:block  text-white mt-10 ml-8"
+          >
             <h3>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -856,27 +562,34 @@ export default function Home() {
             </h3>
           </motion.div>
           <div className="Heading ml-10 mt-10 flex flex-col   md:flex ">
-            <motion.h1 initial={{x:-500}}
-                animate={{x:0}}
-                transition={
-                  {
-                    duration:"1",}} 
-                     className="sm:text-2xl md:text-3xl lg:text-4xl font SegoeUI, Segoe UI text-white">
+            <motion.h1
+              initial={{ x: -500 }}
+              animate={{ x: 0 }}
+              transition={{
+                duration: "1",
+              }}
+              className="sm:text-2xl md:text-3xl lg:text-4xl font SegoeUI, Segoe UI text-white"
+            >
               DISCOVER
             </motion.h1>
-            <motion.h2 initial={{x:-500}}
-                animate={{x:0}}
-                transition={
-                  {
-                    duration:"2",}} 
-                     className=" sm:text-4xl md:text-5xl lg:text-6xl mt-3 font SegoeUI, Segoe UI text-white ">
+            <motion.h2
+              initial={{ x: -500 }}
+              animate={{ x: 0 }}
+              transition={{
+                duration: "2",
+              }}
+              className=" sm:text-4xl md:text-5xl lg:text-6xl mt-3 font SegoeUI, Segoe UI text-white "
+            >
               A NEW WORLD
             </motion.h2>
-            <motion.p initial={{x:-500}}
-                animate={{x:0}}
-                transition={
-                  {
-                    duration:"3",}}  className=" text-[#737373] mt-8 font SegoeUI, Segoe UI">
+            <motion.p
+              initial={{ x: -500 }}
+              animate={{ x: 0 }}
+              transition={{
+                duration: "3",
+              }}
+              className=" text-[#737373] mt-8 font SegoeUI, Segoe UI"
+            >
               FOR THOSE WHO WISH FOR MORE...
             </motion.p>
           </div>
@@ -886,15 +599,18 @@ export default function Home() {
         </div> */}
 
           <div className="Last  md:mt-[120px] xs:mt-40 sm:mt-40 md:mt-40  text-sm md:text-lg lg:text-lg ">
-            <motion.p initial={{y:500}}
-                animate={{y:0}}
-                transition={
-                  {
-                    duration:"2",}} className="  text-[#737373] flex justify-center font SegoeUI, Segoe UI">
+            <motion.p
+              initial={{ y: 500 }}
+              animate={{ y: 0 }}
+              transition={{
+                duration: "2",
+              }}
+              className="  text-[#737373] flex justify-center font SegoeUI, Segoe UI"
+            >
               BRINGING THE WORLD CLOSER TOGETHER
             </motion.p>
 
-            <div className="flex justify-center  mt-5">
+            {/* <div className="flex justify-center  mt-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="82.828"
@@ -913,6 +629,35 @@ export default function Home() {
                   stroke-width="2"
                 />
               </svg>
+            </div> */}
+            <div className="flex justify-center mt-5">
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="82.828"
+                height="42.414"
+                viewBox="0 0 82.828 42.414"
+                onClick={handleClick}
+                animate={controls}
+                whileHover={{ scale: 1.2 }}
+                style={{ cursor: "pointer" }}
+                initial={{ y: 0 }}
+                whileInView={{ y: [0, -10, 0] }} // Move up and down
+                transition={{
+                  y: { duration: 1, yoyo: Infinity, ease: "easeInOut" },
+                }} // Continuous up and down movement
+              >
+                <path
+                  id="Path_27315"
+                  data-name="Path 27315"
+                  d="M74.805,456.151l40-40-40-40"
+                  transform="translate(457.565 -73.391) rotate(90)"
+                  fill="none"
+                  stroke="#fff"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </motion.svg>
             </div>
           </div>
         </div>
@@ -920,10 +665,21 @@ export default function Home() {
 
       <div className="second w-full bg-white w-full mx-auto h-auto">
         <div className="md:block">
-          <p className="pt-10 text-center sm:text-sm md:text-lg lg:text-lg">
+          <motion.p
+            initial={{ y: -100 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: "2" }}
+            className="pt-10 text-center sm:text-sm md:text-lg lg:text-lg"
+          >
             A REAL ESTATE AND PROPERTY PLATFORM THAT IS CHANGING THE WORLD
-          </p>
-          <div className="text flex flex-col ml-8   mt-10">
+          </motion.p>
+          <motion.div
+            initial={{ x: -500 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: "2" }}
+            className="text flex flex-col ml-8   mt-10"
+          >
             <h1 className="text-lg flex lg:justify-start justify-center xs:text-xl  md:text-2xl text-center lg:text-3xl text-black">
               A REVOLUTIONARY PLATFORM
             </h1>
@@ -933,10 +689,15 @@ export default function Home() {
             <h3 className="text-xl flex lg:justify-start justify-center xs:text-3xl md:text-4xl text-center lg:text-6xl text-black">
               WORLDWIDE
             </h3>
-          </div>
+          </motion.div>
 
-          <div className="  flex-1">
-            <div className="logo flex justify-center pt-40 md:pt-20  md:justify-end md:mr-10 mt-6 md:mt-0">
+          <motion.div
+            initial={{ x: 600 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: "2" }}
+            className="text-center lg:text-left xl:text-left"
+          >
+            <div className="logo flex pt-40 md:pt-20  ml-[35%]  md:ml-[68%] lg:ml-[70%] xl:ml-[75%]  md:mr-10 mt-6 md:mt-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="280"
@@ -987,22 +748,26 @@ export default function Home() {
                 PERSONAL TRANSACTIONS
               </h3>
             </div> */}
-            <div className="text-2 flex flex-col justify-around ml-[35%] md:ml-[68%] lg:ml-[75%] xl:ml-[90%] mr-10 mt-8">
-  <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-    CONNECTING USERS FROM ACROSS THE GLOBE
-  </h1>
-  <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-    TO FACILITATE LIFE'S MOST IMPORTANT
-  </h2>
-  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-    PERSONAL TRANSACTIONS
-  </h3>
-</div>
+            <div className="text-2 flex flex-col  ml-[35%] md:ml-[68%] lg:ml-[70%] xl:ml-[75%]  mt-8">
+              <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl">
+                CONNECTING USERS FROM ACROSS THE GLOBE
+              </h1>
+              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
+                TO FACILITATE LIFE'S MOST IMPORTANT
+              </h2>
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl">
+                PERSONAL TRANSACTIONS
+              </h3>
+            </div>
+          </motion.div>
 
-          </div>
-          <div className="text-3 flex justify-start ml-4 sm:ml-10 md:ml-20 mt-8">
-            <div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl display:inline-block  pt-40 md:pt-20 text-black">
+          <div className="text-3 flex justify-start ml-4 sm:ml-10 md:ml-20 ">
+            <motion.div
+              initial={{ x: -500 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: 2 }}
+            >
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl display:inline-block  pt-10 md:pt-20 text-black">
                 THE BEST OF THE BEST
               </h1>
               <h2 className="pt-4 sm:pt-6 lg:pt-10 text-base sm:text-lg md:text-xl lg:text-2xl">
@@ -1018,10 +783,18 @@ export default function Home() {
                 {" "}
                 FROM ACROSS THE WORLD.
               </h2>
-            </div>
+            </motion.div>
           </div>
           <div className="Scroll-icon flex justify-center mt-5">
-            <svg
+            <motion.svg
+              onClick={handleClick}
+              animate={controls}
+              whileHover={{ scale: 1.2 }}
+              style={{ cursor: "pointer" }}
+              whileInView={{ y: [0, -10, 0], ease: "easeInOut" }} // Move up and down
+              transition={{
+                y: { duration: 1, yoyo: Infinity, ease: "easeInOut" },
+              }} // Continuous up and down movement
               xmlns="http://www.w3.org/2000/svg"
               width="82.828"
               height="42.414"
@@ -1038,14 +811,21 @@ export default function Home() {
                 stroke-linejoin="round"
                 stroke-width="2"
               />
-            </svg>
+            </motion.svg>
           </div>
         </div>
       </div>
 
       <div className=" third w-full bg-white w-full  mx-auto      h-[600px]">
         <div className="heading md:block pt-20 ">
-          <h1 className="text-3xl text-black ml-20">OUR CATEGORIES</h1>
+          <motion.h1
+            initial={{ x: -500 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: "2" }}
+            className="text-3xl text-black ml-20"
+          >
+            OUR CATEGORIES
+          </motion.h1>
         </div>
         <div className="slider-container pl-10   pt-20 space-x-4">
           <Slider {...settings}>
@@ -1077,11 +857,16 @@ export default function Home() {
         </div>
       </div>
       <div className="forth w-full bg-white h-[720px] sm:h-[820px] xs:h-[900px]">
-        <div className="heading">
+        <motion.div
+          initial={{ y: 50 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 1 }}
+          className="heading"
+        >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl text-center">
             ONE PLATFORM FOR ALL PREMIUM LISTINGS
           </h1>
-        </div>
+        </motion.div>
         <div className="sub-heading flex justify-center mt-10 md:display:block">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl text-black">
             UNLIMITED POTENTIAL
@@ -1089,11 +874,17 @@ export default function Home() {
         </div>
 
         <div className="main flex flex-col lg:flex-row justify-between mt-10 lg:mt-40 mx-5 lg:mx-20">
-          <div className="pt-10 lg:pt-14 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <motion.div
+            initial={{ x: -100 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: 1 }}
+            className="pt-10 lg:pt-14 flex flex-col items-center lg:items-start text-center lg:text-left"
+          >
             <Image
               src="/Zmo.png"
               alt="picture"
-              className="dark:invert md:ml-10 sm:w-48 xs:w-16"
+              className="dark:invert m-4 w-48 sm:w-64 md:w-72 lg:w-80"
+               sizes="(max-width: 640px) 12rem, (max-width: 768px) 16rem, (max-width: 1024px) 18rem, 20rem"
               width={400}
               height={100}
             />
@@ -1106,19 +897,27 @@ export default function Home() {
             <p className="text-xs sm:text-sm lg:text-md text-black mt-2">
               FOR ALL PREMIUM LISTINGS
             </p>
-          </div>
-          <div className="flex justify-center flex-col items-center lg:items-end pt-10 pb-20 mb-10 lg:mb-0">
+          </motion.div>
+
+          <motion.div
+            initial={{ x: 500 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: 1 }}
+            className="flex justify-center flex-col items-center lg:items-end pt-10 pb-20 mb-10 lg:mb-0"
+          >
             <Image
               src="/pic.svg"
               alt="picture"
-              className="dark:invert m-4 w-48 sm:w-64 md:w-72 lg:w-80"
-              width={400}
-              height={600}
+              className="dark:invert m-4 w-48 sm:w-72 md:w-80 lg:w-96"
+              width={600}
+              height={800}
+              sizes="(max-width: 640px) 12rem, (max-width: 768px) 16rem, (max-width: 1024px) 18rem, 20rem"
             />
-            <p className="text-center lg:text-right lg:ml-80 mr-20 text-black">
+
+            <p className="text-start xs:ml-40  lg:text-right lg:ml-80 mr-20 text-black">
               LET YOUR DREAMS FIND YOU
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* <div className="flex justify-end mr-[60px] sm:justify-center   lg:justify-end mr-40  mt-[-45px] sm:mt-[-70px] lg:mt-[-70px]">
@@ -1127,19 +926,32 @@ export default function Home() {
       </div>
 
       <div className="w-full flex-1 bg-boat bg-cover max-w-full h-[600px] mt-auto bg-center bg-no-repeat">
-        <div className="flex justify-center sm:justify-center md:justify-center lg:justify-end mr-4 lg:mr-20 pt-20">
+        <motion.div
+          initial={{ y: -200 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 1 }}
+          className="flex justify-center sm:justify-center md:justify-center lg:justify-end mr-4 lg:mr-20 pt-20"
+        >
           <h1 className="text-white text-2xl lg:text-4xl text-center lg:text-right">
             PERSONALIZED FOR YOU
           </h1>
-        </div>
-        <div className="text-white flex justify-center sm:justify-center md:justify-center lg:justify-end   md:text-left md:ml-[10%] lg:ml-[50%] lg:mr-4 mt-4 md:mt-0 lg:mt-8">
+        </motion.div>
+        <motion.div
+          initial={{ x: 500 }}
+          whileInView={{ x: 10 }}
+          transition={{ duration: 1 }}
+          className="text-white flex justify-center sm:justify-center md:justify-center lg:justify-end   md:text-left md:ml-[10%] lg:ml-[50%] lg:mr-4 mt-4 md:mt-0 lg:mt-8"
+        >
           <h2 className="text-white  text-sm md:text-base ">
             DELIVERING THOUSANDS OF PERSONALIZED ALERTS EVERYDAY OUR USERS CAN
             BE FIRST IN LINE WHEN THAT OPPORTUNITY OF A LIFETIME IS HERE.
           </h2>
-        </div>
+        </motion.div>
         <div className="mt-20 flex justify-start ml-5 md:justify-start ml-20 lg:justify-end lg:mr-20">
-          <svg
+          <motion.svg
+            initial={{ x: 10 }}
+            whileInView={{ x: 50 }}
+            transition={{ duration: 1 }}
             xmlns="http://www.w3.org/2000/svg"
             width="248.759"
             height="28"
@@ -1171,14 +983,38 @@ export default function Home() {
                 fill="#fff"
               />
             </g>
-          </svg>
+          </motion.svg>
         </div>
       </div>
 
       <div className="6 w-full  bg-dots bg-cover    h-[600px]">
         <div className="container bg-dots bg-cover  mx-auto"></div>
-        <div className="flex justify-center pt-60 ">
-          <svg
+        <div className="flex flex-col text-center pt-60 ">
+          <motion.h1
+            initial={{ y: -100 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-5xl text-black font SegoeUI, Segoe UI tracking-widest"
+          >
+            GLOBAL VISION
+          </motion.h1>
+          <motion.h5
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 40, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mt-10 text-xl tracking-widest"
+          >
+            WITH A REMOTE CULTURE , DIVERSITY IS NATURALLY IN OUR DNA.
+          </motion.h5>
+          <motion.h5
+            initial={{ x: 40, opacity: 0 }}
+            whileInView={{ x: 20, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mt-2 text-xl tracking-widest"
+          >
+            BASED ACROSSED THE GLOBE , MAKING UP 23 DIFFERENT NATIONALITIES.
+          </motion.h5>
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width="886"
             height="150"
@@ -1219,42 +1055,94 @@ Based across THE GLOBE, making up over 23 different nationalities."
                 </tspan>
               </text>
             </g>
-          </svg>
+          </svg> */}
         </div>
       </div>
-     
+
       <div className=" 7 w-full flex-1 max-w-full h-[600px]">
         <div className="flex flex-col  sm:flex-row items-center justify-center  mx-auto pt-20 sm:pt-40 lg:pt-60">
-          <Image
-            src="/zimo.png"
-            width={250}
-            height={250}
-            alt="zimo logo"
-            className="m-4 w-48 sm:w-64 md:w-72 lg:w-80"
-          />
-          <Image
-            src="/civica.png"
-            width={250}
-            height={250}
-            alt="civica logo"
-            className="m-4 w-48 sm:w-64 md:w-72 lg:w-80"
-          />
+          <div className="flex-col">
+            <motion.div
+              initial={{ x: -300 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: "2" }}
+            >
+              {" "}
+              <Image
+                src="/Zmo.png"
+                width={250}
+                height={250}
+                alt="zimo logo"
+                className="m-4 w-48 sm:w-64 md:w-72 lg:w-80"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ x: 300 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: "2" }}
+            >
+              <Image
+                src="/partners.png"
+                width={250}
+                height={250}
+                alt=" partners"
+                className="m-4 w-48 sm:w-64 md:w-72 lg:w-80"
+              />
+            </motion.div>
+          </div>
+          <div className="flex-col">
+            <motion.div
+              initial={{ y: -300 }}
+              whileInView={{ y: 0 }}
+              transition={{ duration: "2" }}
+            >
+              {" "}
+              <Image
+                src="/civica1.png"
+                width={250}
+                height={250}
+                alt="civica logo"
+                className="m-4 w-48 sm:w-64 md:w-72 lg:w-80"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ y: 300 }}
+              whileInView={{ y: 0 }}
+              transition={{ duration: "2" }}
+            >
+              <Image
+                src="/barclays.png"
+                width={250}
+                height={250}
+                alt="civica logo"
+                className="m-4 w-48 sm:w-64 md:w-72 lg:w-80"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
 
       <div className="8 w-full bg-blue bg-cover max-w-full h-[600px]">
         <div className="flex flex-row">
           <div className="pt-[450px]">
-            <Image
+           <motion.div  initial={{ x: 600 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: "2" }} >
+             <Image
               src="/car.png"
               className=" ml-10"
               alt="car"
               width={200}
               height={600}
             />
+            </motion.div>
           </div>
           <div className="logo-end flex justify-end pt-[470px] mr-auto ml-auto ">
-            <svg
+            <motion.svg
+            initial={{ x: 600 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: "2" }}
               xmlns="http://www.w3.org/2000/svg"
               width="500"
               height="223.48"
@@ -1291,12 +1179,10 @@ Based across THE GLOBE, making up over 23 different nationalities."
                   transform="translate(513.554 0.002)"
                 />
               </g>
-            </svg>
+            </motion.svg>
           </div>
         </div>
       </div>
-
-   
     </>
   );
 }
