@@ -14,6 +14,7 @@
 
 import { user } from "@/util/db";
 
+
 export default function handler(req, res) {
   const { id } = req.query;
   const userId = parseInt(id);

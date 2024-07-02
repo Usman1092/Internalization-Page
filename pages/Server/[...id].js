@@ -32,7 +32,7 @@ const UserInfo = () => {
       <h1 className='text-3xl font-bold text-center'>SSG SERVER SIDE RENDERING</h1>
      <div className='pt-20 flex flex-col justify-center  '> 
       <p className='ml-20 pt-10 text-xl'>Name: {userInfo.firstName} {userInfo.lastName}</p>
-      <p className='ml-20 pt-10  text-xl'>Email: {userInfo.email}</p>
+      <p className='ml-20 pt-10  text-xl'>Email: {userInfo.gender}</p>
       <p className='ml-20 pt-10 text-xl'>Age: {userInfo.age}</p>
       </div>
      

@@ -6,6 +6,7 @@ const UserPage = ({ data }) => {
     <div>
       <h1 className=" pl-20 text-2xl text-center">Profile Page OF {data.firstName}</h1>
       <p className="  pl-20 text-2xl text-center">{data.lastName}</p>
+      <p className="  pl-20 text-2xl text-center">{data.gender}</p>
     </div>
   );
 };
