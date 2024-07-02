@@ -12,6 +12,7 @@ import { BsChevronLeft } from "react-icons/bs";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  
   const settings = {
     arrows: true,
     infinite: true,
@@ -49,22 +50,15 @@ export default function Home() {
     ],
   };
 
-  const controls = useAnimation();
-
-  const handleClick = () => {
-    // Start the pop animation
-    controls.start({
-      scale: [1, 1.5, 1],
-      y: [0, -10, 0],
-      transition: { duration: 0.3 },
-    });
-
-    // Scroll the screen
-    window.scrollTo({
+  
+  const handleScroll = () => {
+    window.scrollBy({
       top: 800,
-      behavior: "smooth",
+      behavior: 'smooth'
     });
   };
+
+  
   return (
     <>
       <div className=" first  w-full   md:w-auto flex flex-1 bg-bg-bg1 bg-cover bg-norepeat  overflow-hidden   h-[600px]">
@@ -72,74 +66,68 @@ export default function Home() {
           <div className=" nav flex justify-between text-white  pt-10">
             <div className="1">
               <div className="flex flex-row ml-6 space-x-4">
-                <motion.svg
-                  initial={{ x: -500 }}
-                  animate={{ x: 0 }}
-                  transition={{
-                    duration: "2",
-                  }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="60"
-                  height="35"
-                  viewBox="0 0 65.965 50"
-                >
-                  <g
-                    id="Group_3055"
-                    data-name="Group 3055"
-                    transform="translate(-448.5 -697.643)"
-                  >
-                    <rect
-                      id="Rectangle_178"
-                      data-name="Rectangle 178"
-                      width="65.963"
-                      height="7.143"
-                      transform="translate(448.5 697.643)"
-                      fill="#fff"
-                    />
-                    <rect
-                      id="Rectangle_179"
-                      data-name="Rectangle 179"
-                      width="65.963"
-                      height="7.143"
-                      transform="translate(448.5 740.5)"
-                      fill="#fff"
-                    />
-                    <g
-                      id="Group_3054"
-                      data-name="Group 3054"
-                      transform="translate(448.5 714.258)"
-                    >
-                      <path
-                        id="Path_7768"
-                        data-name="Path 7768"
-                        d="M468.894,717.088v-.352a5.613,5.613,0,0,0-.349-1.659,23.7,23.7,0,0,0-1.6-2.839c-1.028-1.788-2.188-3.849-3.221-5.649-.853-1.484-1.65-3.387-3.768-3.417-2.2-.03-2.936,1.914-3.735,3.32-2.536,4.459-7.723,13.438-7.723,13.438h2.392s4.949-8.756,7.407-13.183c.313-.568.938-1.31,1.659-1.31,1.1,0,1.647,1.307,2.139,2.2,1.319,2.4,2.59,4.7,3.831,7.022.388.73,1.178,1.692.637,2.68-.354.646-1.064.607-2.073.607,0,.018-9.769,0-9.769,0v1.98H463.6a20.86,20.86,0,0,0,2.936-.1A2.956,2.956,0,0,0,468.894,717.088Z"
-                        transform="translate(-448.5 -703.172)"
-                        fill="#fff"
-                      />
-                      <path
-                        id="Path_7769"
-                        data-name="Path 7769"
-                        d="M454.092,706.024v.352a5.54,5.54,0,0,0,.352,1.662,23.666,23.666,0,0,0,1.6,2.84c1.031,1.785,2.187,3.849,3.224,5.649.853,1.481,1.647,3.386,3.765,3.417,2.2.03,2.936-1.914,3.735-3.32,2.539-4.459,7.726-13.438,7.726-13.438h-2.395s-4.949,8.756-7.4,13.182c-.315.565-.938,1.31-1.662,1.31-1.1,0-1.644-1.307-2.136-2.2-1.322-2.4-2.593-4.7-3.831-7.022-.391-.73-1.181-1.692-.64-2.683.355-.646,1.067-.607,2.076-.607,0-.015,9.766,0,9.766,0v-1.977H459.39a20.893,20.893,0,0,0-2.936.1A2.956,2.956,0,0,0,454.092,706.024Z"
-                        transform="translate(-437.289 -703.172)"
-                        fill="#fff"
-                      />
-                      <path
-                        id="Path_7770"
-                        data-name="Path 7770"
-                        d="M478.466,717.088v-.352a5.517,5.517,0,0,0-.352-1.659,23.249,23.249,0,0,0-1.6-2.839c-1.028-1.788-2.188-3.849-3.224-5.649-.85-1.484-1.647-3.387-3.765-3.417-2.2-.03-2.936,1.914-3.735,3.32-2.536,4.459-7.723,13.438-7.723,13.438h2.392s4.949-8.756,7.407-13.183c.313-.568.934-1.31,1.659-1.31,1.1,0,1.647,1.307,2.139,2.2,1.319,2.4,2.59,4.7,3.828,7.022.391.73,1.181,1.692.64,2.68-.355.646-1.064.607-2.076.607,0,.018-9.766,0-9.766,0v1.98h8.873a20.858,20.858,0,0,0,2.936-.1A2.956,2.956,0,0,0,478.466,717.088Z"
-                        transform="translate(-429.309 -703.172)"
-                        fill="#fff"
-                      />
-                      <path
-                        id="Path_7771"
-                        data-name="Path 7771"
-                        d="M463.664,706.024v.352a5.536,5.536,0,0,0,.352,1.662,23.649,23.649,0,0,0,1.6,2.84c1.028,1.785,2.187,3.849,3.224,5.649.853,1.481,1.647,3.386,3.765,3.417,2.2.03,2.936-1.914,3.735-3.32,2.539-4.459,7.726-13.438,7.726-13.438h-2.395s-4.949,8.756-7.407,13.182c-.312.565-.934,1.31-1.659,1.31-1.1,0-1.647-1.307-2.14-2.2-1.319-2.4-2.59-4.7-3.828-7.022-.391-.73-1.181-1.692-.64-2.683.355-.646,1.064-.607,2.076-.607,0-.015,9.766,0,9.766,0v-1.977h-8.874a20.891,20.891,0,0,0-2.936.1A2.957,2.957,0,0,0,463.664,706.024Z"
-                        transform="translate(-418.098 -703.172)"
-                        fill="#fff"
-                      />
-                    </g>
-                  </g>
-                </motion.svg>
+           
+                   <motion.svg
+      initial={{ x: -500 }}
+      animate={{ x: 0 }}
+      transition={{
+        duration: 2,
+      }}
+      xmlns="http://www.w3.org/2000/svg"
+      width="60"
+      height="35"
+      viewBox="0 0 65.965 50"
+      className="w-8 sm:w-16  h-8 sm:h-12 "
+    >
+      <g id="Group_3055" data-name="Group 3055" transform="translate(-448.5 -697.643)">
+        <rect
+          id="Rectangle_178"
+          data-name="Rectangle 178"
+          width="65.963"
+          height="7.143"
+          transform="translate(448.5 697.643)"
+          fill="#fff"
+        />
+        <rect
+          id="Rectangle_179"
+          data-name="Rectangle 179"
+          width="65.963"
+          height="7.143"
+          transform="translate(448.5 740.5)"
+          fill="#fff"
+        />
+        <g id="Group_3054" data-name="Group 3054" transform="translate(448.5 714.258)">
+          <path
+            id="Path_7768"
+            data-name="Path 7768"
+            d="M468.894,717.088v-.352a5.613,5.613,0,0,0-.349-1.659,23.7,23.7,0,0,0-1.6-2.839c-1.028-1.788-2.188-3.849-3.221-5.649-.853-1.484-1.65-3.387-3.768-3.417-2.2-.03-2.936,1.914-3.735,3.32-2.536,4.459-7.723,13.438-7.723,13.438h2.392s4.949-8.756,7.407-13.183c.313-.568.938-1.31,1.659-1.31,1.1,0,1.647,1.307,2.139,2.2,1.319,2.4,2.59,4.7,3.831,7.022.388.73,1.178,1.692.637,2.68-.354.646-1.064.607-2.073.607,0,.018-9.769,0-9.769,0v1.98H463.6a20.86,20.86,0,0,0,2.936-.1A2.956,2.956,0,0,0,468.894,717.088Z"
+            transform="translate(-448.5 -703.172)"
+            fill="#fff"
+          />
+          <path
+            id="Path_7769"
+            data-name="Path 7769"
+            d="M454.092,706.024v.352a5.54,5.54,0,0,0,.352,1.662,23.666,23.666,0,0,0,1.6,2.84c1.031,1.785,2.187,3.849,3.224,5.649.853,1.481,1.647,3.386,3.765,3.417,2.2.03,2.936-1.914,3.735-3.32,2.539-4.459,7.726-13.438,7.726-13.438h-2.395s-4.949,8.756-7.4,13.182c-.315.565-.938,1.31-1.662,1.31-1.1,0-1.644-1.307-2.136-2.2-1.322-2.4-2.593-4.7-3.831-7.022-.391-.73-1.181-1.692-.64-2.683.355-.646,1.067-.607,2.076-.607,0-.015,9.766,0,9.766,0v-1.977H459.39a20.893,20.893,0,0,0-2.936.1A2.956,2.956,0,0,0,454.092,706.024Z"
+            transform="translate(-437.289 -703.172)"
+            fill="#fff"
+          />
+          <path
+            id="Path_7770"
+            data-name="Path 7770"
+            d="M478.466,717.088v-.352a5.517,5.517,0,0,0-.352-1.659,23.249,23.249,0,0,0-1.6-2.839c-1.028-1.788-2.188-3.849-3.224-5.649-.85-1.484-1.647-3.387-3.765-3.417-2.2-.03-2.936,1.914-3.735,3.32-2.536,4.459-7.723,13.438-7.723,13.438h2.392s4.949-8.756,7.407-13.183c.313-.568.934-1.31,1.659-1.31,1.1,0,1.647,1.307,2.139,2.2,1.319,2.4,2.59,4.7,3.828,7.022.391.73,1.181,1.692.64,2.68-.355.646-1.064.607-2.076.607,0,.018-9.766,0-9.766,0v1.98h8.873a20.858,20.858,0,0,0,2.936-.1A2.956,2.956,0,0,0,478.466,717.088Z"
+            transform="translate(-429.309 -703.172)"
+            fill="#fff"
+          />
+          <path
+            id="Path_7771"
+            data-name="Path 7771"
+            d="M463.664,706.024v.352a5.536,5.536,0,0,0,.352,1.662,23.649,23.649,0,0,0,1.6,2.84c1.028,1.785,2.187,3.849,3.224,5.649.853,1.481,1.647,3.386,3.765,3.417,2.2.03,2.936-1.914,3.735-3.32,2.539-4.459,7.726-13.438,7.726-13.438h-2.395s-4.949,8.756-7.407,13.182c-.312.565-.934,1.31-1.659,1.31-1.1,0-1.647-1.307-2.14-2.2-1.319-2.4-2.59-4.7-3.828-7.022-.391-.73-1.181-1.692-.64-2.683.355-.646,1.064-.607,2.076-.607,0-.015,9.766,0,9.766,0v-1.977h-8.874a20.891,20.891,0,0,0-2.936.1A2.957,2.957,0,0,0,463.664,706.024Z"
+            transform="translate(-418.098 -703.172)"
+            fill="#fff"
+          />
+        </g>
+      </g>
+                  </motion.svg>
 
                 <motion.svg
                   initial={{ x: -500 }}
@@ -153,6 +141,7 @@ export default function Home() {
                   width="120"
                   height="35"
                   viewBox="0 0 184.896 50"
+                   className="w-8 sm:w-16 md:w-32 lg:w-32 xl:w-32  h-8 sm:h-12  "
                 >
                   <path
                     id="Path_7808"
@@ -214,7 +203,7 @@ export default function Home() {
                   width="60"
                   height="10"
                   viewBox="0 0 80.5 14.66"
-                  className="mt-5"
+                  className=" w-8 sm:w-16  h-8 sm:h-12 "
                 >
                   <path
                     id="Path_27304"
@@ -275,201 +264,19 @@ export default function Home() {
               </motion.svg>
             </div>
             <div className="3  flex overflow-hidden   ">
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="500"
-                height="35"
-                viewBox="0 0 580.838 39"
-              >
-                <g
-                  id="Group_4723"
-                  data-name="Group 4723"
-                  transform="translate(-1284 -73)"
-                >
-      
 
-              
 
-                  <path  
-                    id="Path_7582"
-                    data-name="Path 7582"
-                    d="M102.3,77.923H98.716v-1.3a5.761,5.761,0,0,0-11.522,0v1.3H83.607a1.1,1.1,0,0,0-1.1,1.1V92.46a3.41,3.41,0,0,0,3.406,3.406H99.995A3.41,3.41,0,0,0,103.4,92.46V79.022A1.1,1.1,0,0,0,102.3,77.923Zm-14.114-1.3a4.766,4.766,0,0,1,9.533,0v1.3H88.188ZM102.406,92.46a2.414,2.414,0,0,1-2.411,2.411H85.914A2.414,2.414,0,0,1,83.5,92.46V79.022a.1.1,0,0,1,.1-.1h3.586V81.04a1.244,1.244,0,1,0,1,0V78.918h9.533V81.04a1.244,1.244,0,1,0,.995,0V78.918H102.3a.1.1,0,0,1,.1.1Z"
-                    transform="translate(1600 8)"
-                    fill="#fff"
-                    stroke="#fff"
-                    stroke-width="0.5"
-                  />
-                  <g
-                    id="Group_2867"
-                    data-name="Group 2867"
-                    transform="translate(1750 80)"
-                  >
-                    <g
-                      id="Group_2661"
-                      data-name="Group 2661"
-                      transform="translate(3.676 0)"
-                    >
-                      <path
-                        id="Path_7580"
-                        data-name="Path 7580"
-                        d="M113.274,88.712a6.618,6.618,0,1,1,6.618-6.618A6.625,6.625,0,0,1,113.274,88.712Zm0-11.765a5.147,5.147,0,1,0,5.147,5.147A5.153,5.153,0,0,0,113.274,76.948Z"
-                        transform="translate(-106.656 -75.477)"
-                        fill="#fff"
-                        stroke="#fff"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                    <g
-                      id="Group_2662"
-                      data-name="Group 2662"
-                      transform="translate(0 13.971)"
-                    >
-                      <path
-                        id="Path_7581"
-                        data-name="Path 7581"
-                        d="M107.022,160.556a.735.735,0,0,1-.735-.735,8.824,8.824,0,0,0-17.616-.735h14.675a.735.735,0,1,1,0,1.471H87.169v-.735a10.294,10.294,0,0,1,20.588,0A.736.736,0,0,1,107.022,160.556Z"
-                        transform="translate(-87.169 -149.527)"
-                        fill="#fff"
-                        stroke="#fff"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </g>
-                  <g
-                    id="Group_4560"
-                    className="hidden lg:block"
-                    data-name="Group 4560"
-                    transform="translate(-8 -3)"
-                  >
-                    <text
-                      id="Tuesday, 25 June 202423"
-                      data-name="Tuesday, 25 June 2024"
-                      transform="translate(1586 109)"
-                      fill="#be9f56"
-                      font-size="14"
-                      font-family="SegoeUI, Segoe UI"
-                      letter-spacing="0.15em"
-                    >
-                      <tspan x="-225.406" y="0">
-                        Tuesday, 25 June 2024
-                      </tspan>
-                    </text>
-                    <g id="Group_4559" data-name="Group 4559">
-                      <text
-                        id="PAKISTAN"
-                        transform="translate(1351 89)"
-                        fill="#fff"
-                        font-size="14"
-                        font-family="SegoeUI, Segoe UI"
-                        letter-spacing="0.15em"
-                      >
-                        <tspan x="0" y="0">
-                          PAKISTAN
-                        </tspan>
-                      </text>
-                      <text
-                        id="_17:23"
-                        data-name="17:23"
-                        transform="translate(1294 89)"
-                        fill="#fff"
-                        font-size="14"
-                        font-family="SegoeUI, Segoe UI"
-                        letter-spacing="0.15em"
-                      >
-                        <tspan x="0" y="0">
-                          4:14
-                        </tspan>
-                      </text>
-                      <text
-                        id="UNITED_KINGDOM"
-                        data-name="UNITED KINGDOM"
-                        transform="translate(1586 89)"
-                        fill="#fff"
-                        font-size="14"
-                        font-family="SegoeUI, Segoe UI"
-                        letter-spacing="0.15em"
-                      >
-                        <tspan x="-144.051" y="0">
-                          ISLAMABAD CITY
-                        </tspan>
-                      </text>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-         */}
-
-              <motion.svg
-                initial={{ x: 1000 }}
-                animate={{ x: 50 }}
-                transition={{ duration: 1 }}
-                xmlns="http://www.w3.org/2000/svg"
-                width="292"
-                height="39"
-                viewBox="0 0 292 39"
-                className=" mr-5 hidden lg:block"
-              >
-                <g
-                  id="Group_4560"
-                  data-name="Group 4560"
-                  transform="translate(-1294 -74)"
-                >
-                  <text
-                    id="SUNDAY_12_FEBRUARY_2023"
-                    data-name="SUNDAY, 12 FEBRUARY 2023"
-                    transform="translate(1586 109)"
-                    fill="#be9f56"
-                    font-size="14"
-                    font-family="SegoeUI, Segoe UI"
-                    letter-spacing="0.15em"
-                  >
-                    <tspan x="-225.406" y="0">
-                      SUNDAY, 12 FEBRUARY 2023
-                    </tspan>
-                  </text>
-                  <g id="Group_4559" data-name="Group 4559">
-                    <text
-                      id="LONDON"
-                      transform="translate(1351 89)"
-                      fill="#fff"
-                      font-size="14"
-                      font-family="SegoeUI, Segoe UI"
-                      letter-spacing="0.15em"
-                    >
-                      <tspan x="0" y="0">
-                        ISLAMABAD{" "}
-                      </tspan>
-                    </text>
-                    <text
-                      id="_17:23"
-                      data-name="17:23"
-                      transform="translate(1294 89)"
-                      fill="#fff"
-                      font-size="14"
-                      font-family="SegoeUI, Segoe UI"
-                      letter-spacing="0.15em"
-                    >
-                      <tspan x="0" y="0">
-                        17:23
-                      </tspan>
-                    </text>
-                    <text
-                      id="UNITED_KINGDOM"
-                      data-name="UNITED KINGDOM"
-                      transform="translate(1587 89)"
-                      fill="#fff"
-                      font-size="14"
-                      font-family="SegoeUI, Segoe UI"
-                      letter-spacing="0.15em"
-                    >
-                      <tspan x="-145.05" y="0">
-                        {" "}
-                        PAKISTAN{" "}
-                      </tspan>
-                    </text>
-                  </g>
-                </g>
-              </motion.svg>
+            
+<motion.svg initial={{ x: 1000 }}  animate={{ x: 50 }}  transition={{ duration: 1 }} xmlns="http://www.w3.org/2000/svg" width="292" height="39" viewBox="0 0 292 39" className=" mr-5 hidden lg:block">
+  <g id="Group_4560" data-name="Group 4560" transform="translate(-1294 -74)">
+    <text id="SUNDAY_12_FEBRUARY_2023" data-name="SUNDAY, 12 FEBRUARY 2023" transform="translate(1586 109)" fill="#be9f56" font-size="14" font-family="SegoeUI, Segoe UI" letter-spacing="0.15em"><tspan x="-225.406" y="0">SUNDAY, 12 FEBRUARY 2023</tspan></text>
+    <g id="Group_4559" data-name="Group 4559">
+      <text id="LONDON" transform="translate(1351 89)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI" letter-spacing="0.15em"><tspan x="0" y="0">PAKISTAN</tspan></text>
+      <text id="_17:23" data-name="17:23" transform="translate(1294 89)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI" letter-spacing="0.15em"><tspan x="0" y="0">17:23</tspan></text>
+      <text id="UNITED_KINGDOM" data-name="UNITED KINGDOM" transform="translate(1586 89)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI" letter-spacing="0.15em"><tspan x="-144.051" y="0">ISLAMABAD</tspan></text>
+    </g>
+  </g>
+</motion.svg>
 
               <motion.div
                 initial={{ x: 1000 }}
@@ -631,190 +438,180 @@ export default function Home() {
               </svg>
             </div> */}
             <div className="flex justify-center mt-5">
-              <motion.svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="82.828"
-                height="42.414"
-                viewBox="0 0 82.828 42.414"
-                onClick={handleClick}
-                animate={controls}
-                whileHover={{ scale: 1.2 }}
-                style={{ cursor: "pointer" }}
-                initial={{ y: 0 }}
-                whileInView={{ y: [0, -10, 0] }} // Move up and down
-                transition={{
-                  y: { duration: 1, yoyo: Infinity, ease: "easeInOut" },
-                }} // Continuous up and down movement
-              >
-                <path
-                  id="Path_27315"
-                  data-name="Path 27315"
-                  d="M74.805,456.151l40-40-40-40"
-                  transform="translate(457.565 -73.391) rotate(90)"
-                  fill="none"
-                  stroke="#fff"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                />
-              </motion.svg>
+           
+    <button onClick={handleScroll}>
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="82.828"
+        height="42.414"
+        viewBox="0 0 82.828 42.414"
+        whileHover={{ scale: 1.2 }}
+        style={{ cursor: "pointer" }}
+        initial={{ y: 0 }}
+        whileInView={{ y: [0, -10, 0] }} // Move up and down
+        transition={{
+          y: { duration: 1, yoyo: Infinity, ease: "easeInOut" }
+        }} // Continuous up and down movement
+      >
+        <path
+          id="Path_27315"
+          data-name="Path 27315"
+          d="M74.805,456.151l40-40-40-40"
+          transform="translate(457.565 -73.391) rotate(90)"
+          fill="none"
+          stroke="#fff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+      </motion.svg>
+    </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="second w-full bg-white w-full mx-auto h-auto">
-        <div className="md:block">
-          <motion.p
-            initial={{ y: -100 }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: "2" }}
-            className="pt-10 text-center sm:text-sm md:text-lg lg:text-lg"
-          >
-            A REAL ESTATE AND PROPERTY PLATFORM THAT IS CHANGING THE WORLD
-          </motion.p>
-          <motion.div
-            initial={{ x: -500 }}
-            whileInView={{ x: 0 }}
-            transition={{ duration: "2" }}
-            className="text flex flex-col ml-8   mt-10"
-          >
-            <h1 className="text-lg flex lg:justify-start justify-center xs:text-xl  md:text-2xl text-center lg:text-3xl text-black">
-              A REVOLUTIONARY PLATFORM
-            </h1>
-            <h2 className="text-lg flex lg:justify-start justify-center xs:text-xl md:text-3xl text-center lg:text-5xl text-black">
-              ENTRIES - SELLERS
-            </h2>
-            <h3 className="text-xl flex lg:justify-start justify-center xs:text-3xl md:text-4xl text-center lg:text-6xl text-black">
-              WORLDWIDE
-            </h3>
-          </motion.div>
+      <div className="second w-full bg-white mx-auto h-auto">
+  <div className="md:block">
+    <motion.p
+      initial={{ y: -100 }}
+      whileInView={{ y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: "2" }}
+      className="pt-10 text-center text-sm md:text-lg lg:text-lg"
+    >
+      A REAL ESTATE AND PROPERTY PLATFORM THAT IS CHANGING THE WORLD
+    </motion.p>
+    <motion.div
+      initial={{ x: -500 }}
+      whileInView={{ x: 0 }}
+      transition={{ duration: "2" }}
+      className="text flex flex-col mt-10 px-4 md:px-8"
+    >
+      <h1 className="text-lg flex justify-center md:justify-start xs:text-xl md:text-2xl lg:text-3xl text-black">
+        A REVOLUTIONARY PLATFORM
+      </h1>
+      <h2 className="text-lg flex justify-center md:justify-start xs:text-xl md:text-3xl lg:text-5xl text-black">
+        ENTRIES - SELLERS
+      </h2>
+      <h3 className="text-xl flex justify-center md:justify-start xs:text-3xl md:text-4xl lg:text-6xl text-black">
+        WORLDWIDE
+      </h3>
+    </motion.div>
 
-          <motion.div
-            initial={{ x: 600 }}
-            whileInView={{ x: 0 }}
-            transition={{ duration: "2" }}
-            className="text-center lg:text-left xl:text-left"
+    <motion.div
+      initial={{ x: 600 }}
+      whileInView={{ x: 0 }}
+      transition={{ duration: "2" }}
+      className="text-center lg:text-left px-4 md:px-8"
+    >
+      <div className="logo flex justify-center md:justify-end pt-20 md:pt-10 mt-6 md:mt-0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="280"
+          height="80"
+          viewBox="0 0 589.596 144.239"
+          className="md:block lg:flex"
+        >
+          <g
+            id="Group_4743"
+            data-name="Group 4743"
+            transform="translate(-56.415 -116.364)"
           >
-            <div className="logo flex pt-40 md:pt-20  ml-[35%]  md:ml-[68%] lg:ml-[70%] xl:ml-[75%]  md:mr-10 mt-6 md:mt-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="280"
-                height="80"
-                viewBox="0 0 589.596 144.239"
-                className="md:block lg:flex"
-              >
-                <g
-                  id="Group_4743"
-                  data-name="Group 4743"
-                  transform="translate(-56.415 -116.364)"
-                >
-                  <path
-                    id="Path_1"
-                    data-name="Path 1"
-                    d="M238.724,236.061v-3.019a46.788,46.788,0,0,0-3.137-14.276c-3.463-8.326-9.3-16.152-14.265-24.431-9.2-15.364-19.559-33.113-28.818-48.591C184.88,133,177.77,116.621,158.839,116.367c-19.687-.26-26.235,16.468-33.38,28.554C102.774,183.284,56.415,260.5,56.415,260.5h21.4s44.23-75.316,66.188-113.38c2.808-4.867,8.375-11.254,14.837-11.254,9.8,0,14.709,11.228,19.115,18.94,11.8,20.664,23.171,40.439,34.236,60.4,3.48,6.274,10.545,14.537,5.706,23.059-3.155,5.561-9.516,5.217-18.543,5.217-.014.144-87.3,0-87.3,0V260.5h79.312s18.675.547,26.249-.824C230.137,257.409,236.945,248.06,238.724,236.061Z"
-                    transform="translate(0 0)"
-                  />
-                  <path
-                    id="Path_2"
-                    data-name="Path 2"
-                    d="M99.743,140.9v3.022A46.769,46.769,0,0,0,102.88,158.2c3.463,8.329,9.3,16.151,14.265,24.434,9.2,15.361,19.555,33.113,28.814,48.591,7.626,12.746,14.733,29.12,33.668,29.374,19.687.264,26.235-16.465,33.38-28.55,22.685-38.367,69.044-115.574,69.044-115.574h-21.4s-44.23,75.313-66.191,113.379c-2.8,4.867-8.372,11.255-14.833,11.255-9.807,0-14.712-11.228-19.115-18.943-11.8-20.661-23.171-40.435-34.236-60.4-3.48-6.278-10.545-14.537-5.706-23.06,3.155-5.561,9.512-5.22,18.543-5.22.01-.14,87.3,0,87.3,0V116.473H147.1s-18.674-.547-26.249.821C108.33,119.558,101.521,128.908,99.743,140.9Z"
-                    transform="translate(106.873 0.001)"
-                  />
-                  <path
-                    id="Path_3"
-                    data-name="Path 3"
-                    d="M312.885,236.061v-3.019a46.782,46.782,0,0,0-3.137-14.276c-3.463-8.326-9.3-16.152-14.265-24.431-9.2-15.364-19.555-33.113-28.814-48.591C259.042,133,251.935,116.621,233,116.367c-19.687-.26-26.235,16.468-33.38,28.554C176.935,183.284,130.576,260.5,130.576,260.5h21.4s44.231-75.316,66.191-113.38c2.808-4.867,8.372-11.254,14.834-11.254,9.807,0,14.712,11.228,19.115,18.94,11.8,20.664,23.171,40.439,34.236,60.4,3.484,6.274,10.545,14.537,5.706,23.059-3.155,5.561-9.512,5.217-18.543,5.217-.01.144-87.3,0-87.3,0V260.5h79.316s18.671.547,26.246-.824C304.3,257.409,311.106,248.06,312.885,236.061Z"
-                    transform="translate(182.926 0)"
-                  />
-                  <path
-                    id="Path_4"
-                    data-name="Path 4"
-                    d="M173.9,140.9v3.022a46.769,46.769,0,0,0,3.137,14.273c3.463,8.329,9.308,16.151,14.265,24.434,9.2,15.361,19.559,33.113,28.818,48.591,7.623,12.746,14.733,29.12,33.664,29.374,19.687.264,26.236-16.465,33.38-28.55,22.686-38.367,69.044-115.574,69.044-115.574h-21.4s-44.23,75.313-66.188,113.379c-2.808,4.867-8.375,11.255-14.837,11.255-9.8,0-14.709-11.228-19.115-18.943-11.8-20.661-23.167-40.435-34.236-60.4-3.481-6.278-10.546-14.537-5.706-23.06,3.155-5.561,9.516-5.22,18.546-5.22.01-.14,87.3,0,87.3,0V116.473H221.265s-18.675-.547-26.249.821C182.491,119.558,175.683,128.908,173.9,140.9Z"
-                    transform="translate(289.798 0.001)"
-                  />
-                </g>
-              </svg>
-            </div>
-            {/* <div className="text-2 flex flex-col justify-around ml-4 ml-[35%] diplay:inline-block md:block lg:ml-[75%] xl:ml-[90%] mr-10 mt-8">
-              <h1 className="text-base sm:text-lg  md:text-xl lg:text-2xl ">
-                CONNECTING USERS FROM ACROSS THE GLOBE
-              </h1>
-              <h2 className="text-base sm:text-lg  md:text-xl lg:text-2xl ">
-                TO FACILITATE LIFE'S MOST IMPORTANT
-              </h2>
-              <h3 className="text-base sm:text-lg  md:text-xl lg:text-2xl ">
-                PERSONAL TRANSACTIONS
-              </h3>
-            </div> */}
-            <div className="text-2 flex flex-col  ml-[35%] md:ml-[68%] lg:ml-[70%] xl:ml-[75%]  mt-8">
-              <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-                CONNECTING USERS FROM ACROSS THE GLOBE
-              </h1>
-              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-                TO FACILITATE LIFE'S MOST IMPORTANT
-              </h2>
-              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-                PERSONAL TRANSACTIONS
-              </h3>
-            </div>
-          </motion.div>
-
-          <div className="text-3 flex justify-start ml-4 sm:ml-10 md:ml-20 ">
-            <motion.div
-              initial={{ x: -500 }}
-              whileInView={{ x: 0 }}
-              transition={{ duration: 2 }}
-            >
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl display:inline-block  pt-10 md:pt-20 text-black">
-                THE BEST OF THE BEST
-              </h1>
-              <h2 className="pt-4 sm:pt-6 lg:pt-10 text-base sm:text-lg md:text-xl lg:text-2xl">
-                A COMBINATION OF AUTOMATION AND MANUAL CURATION. OUR PRO AGENTS
-                AND
-              </h2>
-              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-                {" "}
-                MODERATION TEAMS SELECT THE HIGHEST QUALITY LISTINGS ON THE
-                MARKET
-              </h2>
-              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-                {" "}
-                FROM ACROSS THE WORLD.
-              </h2>
-            </motion.div>
-          </div>
-          <div className="Scroll-icon flex justify-center mt-5">
-            <motion.svg
-              onClick={handleClick}
-              animate={controls}
-              whileHover={{ scale: 1.2 }}
-              style={{ cursor: "pointer" }}
-              whileInView={{ y: [0, -10, 0], ease: "easeInOut" }} // Move up and down
-              transition={{
-                y: { duration: 1, yoyo: Infinity, ease: "easeInOut" },
-              }} // Continuous up and down movement
-              xmlns="http://www.w3.org/2000/svg"
-              width="82.828"
-              height="42.414"
-              viewBox="0 0 82.828 42.414"
-            >
-              <path
-                id="Path_27315"
-                data-name="Path 27315"
-                d="M74.805,456.151l40-40-40-40"
-                transform="translate(457.565 -73.391) rotate(90)"
-                fill="none"
-                stroke="#000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-            </motion.svg>
-          </div>
-        </div>
+            <path
+              id="Path_1"
+              data-name="Path 1"
+              d="M238.724,236.061v-3.019a46.788,46.788,0,0,0-3.137-14.276c-3.463-8.326-9.3-16.152-14.265-24.431-9.2-15.364-19.559-33.113-28.818-48.591C184.88,133,177.77,116.621,158.839,116.367c-19.687-.26-26.235,16.468-33.38,28.554C102.774,183.284,56.415,260.5,56.415,260.5h21.4s44.23-75.316,66.188-113.38c2.808-4.867,8.375-11.254,14.837-11.254,9.8,0,14.709,11.228,19.115,18.94,11.8,20.664,23.171,40.439,34.236,60.4,3.48,6.274,10.545,14.537,5.706,23.059-3.155,5.561-9.516,5.217-18.543,5.217-.014.144-87.3,0-87.3,0V260.5h79.312s18.675.547,26.249-.824C230.137,257.409,236.945,248.06,238.724,236.061Z"
+              transform="translate(0 0)"
+            />
+            <path
+              id="Path_2"
+              data-name="Path 2"
+              d="M99.743,140.9v3.022A46.769,46.769,0,0,0,102.88,158.2c3.463,8.329,9.3,16.151,14.265,24.434,9.2,15.361,19.555,33.113,28.814,48.591,7.626,12.746,14.733,29.12,33.668,29.374,19.687.264,26.235-16.465,33.38-28.55,22.685-38.367,69.044-115.574,69.044-115.574h-21.4s-44.23,75.313-66.191,113.379c-2.8,4.867-8.372,11.255-14.833,11.255-9.807,0-14.712-11.228-19.115-18.943-11.8-20.661-23.171-40.435-34.236-60.4-3.48-6.278-10.545-14.537-5.706-23.06,3.155-5.561,9.512-5.22,18.543-5.22.01-.14,87.3,0,87.3,0V116.473H147.1s-18.674-.547-26.249.821C108.33,119.558,101.521,128.908,99.743,140.9Z"
+              transform="translate(106.873 0.001)"
+            />
+            <path
+              id="Path_3"
+              data-name="Path 3"
+              d="M312.885,236.061v-3.019a46.782,46.782,0,0,0-3.137-14.276c-3.463-8.326-9.3-16.152-14.265-24.431-9.2-15.364-19.555-33.113-28.814-48.591C259.042,133,251.935,116.621,233,116.367c-19.687-.26-26.235,16.468-33.38,28.554C176.935,183.284,130.576,260.5,130.576,260.5h21.4s44.231-75.316,66.191-113.38c2.808-4.867,8.372-11.254,14.834-11.254,9.807,0,14.712,11.228,19.115,18.94,11.8,20.664,23.171,40.439,34.236,60.4,3.484,6.274,10.545,14.537,5.706,23.059-3.155,5.561-9.512,5.217-18.543,5.217-.01.144-87.3,0-87.3,0V260.5h79.316s18.671.547,26.246-.824C304.3,257.409,311.106,248.06,312.885,236.061Z"
+              transform="translate(182.926 0)"
+            />
+            <path
+              id="Path_4"
+              data-name="Path 4"
+              d="M173.9,140.9v3.022a46.769,46.769,0,0,0,3.137,14.273c3.463,8.329,9.308,16.151,14.265,24.434,9.2,15.361,19.559,33.113,28.818,48.591,7.623,12.746,14.733,29.12,33.664,29.374,19.687.264,26.236-16.465,33.38-28.55,22.686-38.367,69.044-115.574,69.044-115.574h-21.4s-44.23,75.313-66.188,113.379c-2.808,4.867-8.375,11.255-14.837,11.255-9.8,0-14.709-11.228-19.115-18.943-11.8-20.661-23.167-40.435-34.236-60.4-3.481-6.278-10.546-14.537-5.706-23.06,3.155-5.561,9.516-5.22,18.546-5.22.01-.14,87.3,0,87.3,0V116.473H221.265s-18.675-.547-26.249.821C182.491,119.558,175.683,128.908,173.9,140.9Z"
+              transform="translate(289.798 0.001)"
+            />
+          </g>
+        </svg>
       </div>
+      <div className="text-2 flex flex-col justify-center text-right md:justify-end mt-8 px-4 md:px-8">
+        <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl">
+          CONNECTING USERS FROM ACROSS THE GLOBE
+        </h1>
+        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
+          TO FACILITATE LIFE'S MOST IMPORTANT
+        </h2>
+        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl">
+          PERSONAL TRANSACTIONS
+        </h3>
+      </div>
+    </motion.div>
+
+    <div className="text-3 flex justify-center md:justify-start mt-10 px-4 md:px-8">
+      <motion.div
+        initial={{ x: -500 }}
+        whileInView={{ x: 0 }}
+        transition={{ duration: 2 }}
+      >
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl text-black">
+          THE BEST OF THE BEST
+        </h1>
+        <h2 className="pt-4 sm:pt-6 lg:pt-10 text-base sm:text-lg md:text-xl lg:text-2xl">
+          A COMBINATION OF AUTOMATION AND MANUAL CURATION. OUR PRO AGENTS
+        </h2>
+        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
+          AND MODERATION TEAMS SELECT THE HIGHEST QUALITY LISTINGS ON THE
+          MARKET
+        </h2>
+        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
+          FROM ACROSS THE WORLD.
+        </h2>
+      </motion.div>
+    </div>
+    <div className="Scroll-icon flex justify-center mt-5">
+      <button onClick={handleScroll}>
+        <motion.svg
+          whileHover={{ scale: 1.2 }}
+          style={{ cursor: "pointer" }}
+          initial={{ y: 0 }}
+          animate={{ y: [0, -10, 0] }}
+          viewport={{ once: false }}
+          transition={{
+            y: { duration: 1, yoyo: Infinity, ease: "easeInOut" },
+          }}
+          xmlns="http://www.w3.org/2000/svg"
+          width="82.828"
+          height="42.414"
+          viewBox="0 0 82.828 42.414"
+        >
+          <path
+            id="Path_27315"
+            data-name="Path 27315"
+            d="M74.805,456.151l40-40-40-40"
+            transform="translate(457.565 -73.391) rotate(90)"
+            fill="none"
+            stroke="#000"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+          />
+        </motion.svg>
+      </button>
+    </div>
+  </div>
+</div>
+
 
       <div className=" third w-full bg-white w-full  mx-auto      h-[600px]">
         <div className="heading md:block pt-20 ">
@@ -829,38 +626,40 @@ export default function Home() {
         </div>
         <div className="slider-container pl-10   pt-20 space-x-4">
           <Slider {...settings}>
-            <div className="ml-5">
+            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
               <Image src="/1.png" width={250} height={250} alt="image" />
-            </div>
-            <div className="ml-5">
+            </motion.div>
+            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
               <Image src="/2.png" width={250} height={250} alt="image" />
-            </div>
-            <div className="ml-5">
+            </motion.div>
+            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
               <Image src="/3.png" width={250} height={250} alt="image" />
-            </div>
-            <div className="ml-5">
+            </motion.div>
+            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
               <Image src="/4.png" width={250} height={250} alt="image" />
-            </div>
-            <div className="ml-5">
+            </motion.div>
+            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
               <Image src="/5.png" width={250} height={250} alt="image" />
-            </div>
-            <div className="ml-5">
+            </motion.div>
+            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}   className="ml-5">
               <Image src="/6.png" width={250} height={250} alt="image" />
-            </div>
-            <div className="ml-5">
+            </motion.div>
+            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
               <Image src="/7.png" width={250} height={250} alt="image" />
-            </div>
-            <div className="ml-5">
+            </motion.div>
+            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270  }} whileInView={{y:0}}  className="ml-5">
               <Image src="/8.png" width={250} height={250} alt="image" />
-            </div>
+            </motion.div>
           </Slider>
         </div>
+        
+       
       </div>
       <div className="forth w-full bg-white h-[720px] sm:h-[820px] xs:h-[900px]">
         <motion.div
-          initial={{ y: 50 }}
-          whileInView={{ y: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ y: 50 ,opacity:0}}
+          whileInView={{ y: 0,opacity:1 }}
+          transition={{ duration: .5  }}
           className="heading"
         >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl text-center">
@@ -868,13 +667,16 @@ export default function Home() {
           </h1>
         </motion.div>
         <div className="sub-heading flex justify-center mt-10 md:display:block">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl text-black">
+          <motion.h1    initial={{ y: 50 ,opacity:0}}
+          whileInView={{ y: 0,opacity:1 }}
+          transition={{ duration: .5  }}className="text-2xl sm:text-3xl lg:text-4xl text-black">
             UNLIMITED POTENTIAL
-          </h1>
+          </motion.h1>
         </div>
 
         <div className="main flex flex-col lg:flex-row justify-between mt-10 lg:mt-40 mx-5 lg:mx-20">
           <motion.div
+             
             initial={{ x: -100 }}
             whileInView={{ x: 0 }}
             transition={{ duration: 1 }}
@@ -899,10 +701,12 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ x: 500 }}
+          <motion.div 
+          
+            initial={{ x: 500}}
             whileInView={{ x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{dur: 1}}
+            
             className="flex justify-center flex-col items-center lg:items-end pt-10 pb-20 mb-10 lg:mb-0"
           >
             <Image
@@ -1060,12 +864,12 @@ Based across THE GLOBE, making up over 23 different nationalities."
       </div>
 
       <div className=" 7 w-full flex-1 max-w-full h-[600px]">
-        <div className="flex flex-col  sm:flex-row items-center justify-center  mx-auto pt-20 sm:pt-40 lg:pt-60">
-          <div className="flex-col">
+        <div className="flex flex-col   items-center ">
+          <div className="flex-col ">
             <motion.div
-              initial={{ x: -300 }}
+              initial={{ x: -500 }}
               whileInView={{ x: 0 }}
-              transition={{ duration: "2" }}
+              transition={{ duration: .5}}
             >
               {" "}
               <Image
@@ -1091,7 +895,7 @@ Based across THE GLOBE, making up over 23 different nationalities."
               />
             </motion.div>
           </div>
-          <div className="flex-col">
+          <div className="flex-col   ">
             <motion.div
               initial={{ y: -300 }}
               whileInView={{ y: 0 }}
@@ -1123,22 +927,23 @@ Based across THE GLOBE, making up over 23 different nationalities."
         </div>
       </div>
 
-      <div className="8 w-full bg-blue bg-cover max-w-full h-[600px]">
+      <div className="8 w-full bg-blue bg-cover bg-center bg-no-repeat  max-w-full h-[600px]">
         <div className="flex flex-row">
-          <div className="pt-[450px]">
-           <motion.div  initial={{ x: 600 }}
-              whileInView={{ x: 0 }}
-              transition={{ duration: "2" }} >
+          <div className="pt-[450px] flex justify-center lg:ml-10">
+           <motion.div  initial={{ x: -300 }}
+              whileInView={{ x: 200 }}
+              transition={{ duration: 2}} >
              <Image
               src="/car.png"
-              className=" ml-10"
               alt="car"
-              width={200}
+              className="ml-10  w-48 sm:w-64 md:w-72 lg:w-80"
+              width={300}
               height={600}
+              
             />
             </motion.div>
           </div>
-          <div className="logo-end flex justify-end pt-[470px] mr-auto ml-auto ">
+          <div className="logo-end flex  lg:justify-end pt-[800px] sm:pt-[1000px] md:pt-[1400px] text-center lg:pt-[470px] mr-auto ml-auto ">
             <motion.svg
             initial={{ x: 600 }}
             whileInView={{ x: 0 }}
