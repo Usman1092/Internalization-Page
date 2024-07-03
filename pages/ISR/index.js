@@ -1,7 +1,7 @@
 import { revalidateTag } from 'next/cache';
 import { redirect } from 'next/dist/server/api-utils';
 import React from 'react'
-
+import Link from 'next/link';
 function ISR({data}) {
   
 
@@ -10,9 +10,9 @@ function ISR({data}) {
     <div>
         <h1 className='text-3xl font-bold text-center pt-10'>Incrementar Side Regeneration (ISR)</h1>
         {data.users && data.users.map(user => (
-        <li key={user.id} className='ml-20'> 
-          {user.firstName}
-        </li>
+        <Link href={`/users/${user.id}`} key={user.id} className='ml-20'> 
+        <div className='pl-20'>  {user.firstName}</div>
+        </Link>
        
       ))}
     </div>

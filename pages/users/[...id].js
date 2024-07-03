@@ -29,10 +29,10 @@ const UserInfo = () => {
 
   return (
     <div>
-      <h1 className='text-3xl font-bold text-center'>CSG CLIENT SIDE RENDERING</h1>
+      <h1 className='text-3xl font-bold text-center'>PAGE RENDERING</h1>
      <div className='pt-20 flex flex-col justify-center  '> 
       <p className='ml-20 pt-10 text-xl'>Name: {userInfo.firstName} {userInfo.lastName}</p>
-      <p className='ml-20 pt-10  text-xl'>Email: {userInfo.gender}</p>
+      <p className='ml-20 pt-10  text-xl'>Gender: {userInfo.gender}</p>
       <p className='ml-20 pt-10 text-xl'>Age: {userInfo.age}</p>
       </div>
      
