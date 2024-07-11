@@ -14,6 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   
   const settings = {
+    autoScroll:true,
     arrows: true,
     infinite: true,
     speed: 500,
