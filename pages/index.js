@@ -22,36 +22,32 @@ export default function Home() {
 
   return (
     <>
-      <section>
+        <main className="overflow-x-hidden">
+      <section className="h-screen">
         <HeroSection />
       </section>
-
-      <section>
+      <section name="SecondSection" className="h-screen">
         <SecondSection />
       </section>
-
-      <section>
+      <section name="ThirdSection" className="h-screen">
         <ThirdSection />
       </section>
-
-      <section>
+      <section className="h-screen md:h-[110vh] lg:h-screen">
         <FourthSection />
       </section>
-      <section>
+      <section className="h-screen">
         <FifthSection />
       </section>
-
-      <section>
+      <section className="h-screen">
         <SixthSection />
       </section>
-
-      <section>
+      <section className="h-screen">
         <SeventhSection />
       </section>
-
-      <section>
+      <section className="h-[150vh]">
         <EighthSection />
       </section>
+    </main>
     </>
   );
 }
