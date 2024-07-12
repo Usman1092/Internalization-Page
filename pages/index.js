@@ -1,56 +1,30 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import React from "react";
+import React ,{useRef}from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Prevarrow from "../components/Prevarrow";
-import Nextarrow from "../components/Nextarrow";
-import { motion, useAnimation } from "framer-motion";
+// import Prevarrow from "../components/Prevarrow";
+// import Nextarrow from "../components/Nextarrow";
+import { motion, useAnimation,useScroll,useTransform,} from "framer-motion";
+import Card from "@/components/Card";
+import ThirdSection from "@/components/ThirdSection";
+
+import { Link } from "react-scroll";
 import { BsChevronRight } from "react-icons/bs";
 import { BsChevronLeft } from "react-icons/bs";
+import SecondSection from "@/components/SecondSection";
+import FourthSection from "@/components/forthSection";
+import FifthSection from "@/components/FifthSection";
+import SixthSection from "@/components/SixthSection";
+import SeventhSection from "@/components/SeventhSection";
+import EighthSection from "@/components/EighthSection";
+import HeroSection from "@/components/HeroSection";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  
-  const settings = {
-    autoScroll:true,
-    arrows: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    nextArrow: <Nextarrow />,
-    prevArrow: <Prevarrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
 
+ 
   
   const handleScroll = () => {
     window.scrollBy({
@@ -59,10 +33,14 @@ export default function Home() {
     });
   };
 
+
+  
+
+ 
   
   return (
     <>
-      <div className=" first  w-full   md:w-auto flex flex-1 bg-bg-bg1 bg-cover bg-norepeat  overflow-hidden   h-[600px]">
+      {/* <div className=" first  w-full   md:w-auto flex flex-1 bg-bg-bg1 bg-cover bg-norepeat  overflow-hidden   h-screen">
         <div className="First w-full flex-1 display:inline-block lg:display:flex  ">
           <div className=" nav flex justify-between text-white  pt-10">
             <div className="1">
@@ -221,7 +199,7 @@ export default function Home() {
                 initial={{ y: -500 }}
                 animate={{ y: 0 }}
                 transition={{
-                  duration: "2",
+                  duration: 2,
                 }}
                 xmlns="http://www.w3.org/2000/svg"
                 width="180"
@@ -282,7 +260,7 @@ export default function Home() {
               <motion.div
                 initial={{ x: 1000 }}
                 animate={{ x: 50 }}
-                transition={{ duration: 2 }}
+                transition={{ duration: 3 }}
               >
                 <Image
                   src="/P.png"
@@ -295,7 +273,7 @@ export default function Home() {
               <motion.div
                 initial={{ x: 1000 }}
                 animate={{ x: 50 }}
-                transition={{ duration: 3 }}
+                transition={{ duration: 3.2 }}
               >
                 <Image
                   src="/bag.png"
@@ -324,7 +302,7 @@ export default function Home() {
             initial={{ x: -500 }}
             animate={{ x: 0 }}
             transition={{
-              duration: "2",
+              duration: 2.8,
             }}
             className=" Back  hidden lg:block  text-white mt-10 ml-8"
           >
@@ -374,7 +352,7 @@ export default function Home() {
               initial={{ x: -500 }}
               animate={{ x: 0 }}
               transition={{
-                duration: "1",
+                duration: 3.5,
               }}
               className="sm:text-2xl md:text-3xl lg:text-4xl font SegoeUI, Segoe UI text-white"
             >
@@ -384,7 +362,7 @@ export default function Home() {
               initial={{ x: -500 }}
               animate={{ x: 0 }}
               transition={{
-                duration: "2",
+                duration: 4,
               }}
               className=" sm:text-4xl md:text-5xl lg:text-6xl mt-3 font SegoeUI, Segoe UI text-white "
             >
@@ -394,50 +372,28 @@ export default function Home() {
               initial={{ x: -500 }}
               animate={{ x: 0 }}
               transition={{
-                duration: "3",
+                duration: 4.5,
               }}
               className=" text-[#737373] mt-8 font SegoeUI, Segoe UI"
             >
               FOR THOSE WHO WISH FOR MORE...
             </motion.p>
           </div>
-          {/* <div className="ml-6 mt-10 text-xl md:text-lg sm:text-base">
-          <p className=" text-[#737373] font SegoeUI, Segoe UI">FOR THOSE WHO WISH FOR MORE...</p>
-         
-        </div> */}
+       
 
           <div className="Last  md:mt-[120px] xs:mt-40 sm:mt-40 md:mt-40  text-sm md:text-lg lg:text-lg ">
             <motion.p
               initial={{ y: 500 }}
               animate={{ y: 0 }}
               transition={{
-                duration: "2",
+                duration: 3,
               }}
               className="  text-[#737373] flex justify-center font SegoeUI, Segoe UI"
             >
               BRINGING THE WORLD CLOSER TOGETHER
             </motion.p>
 
-            {/* <div className="flex justify-center  mt-5">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="82.828"
-                height="42.414"
-                viewBox="0 0 82.828 42.414"
-              >
-                <path
-                  id="Path_27315"
-                  data-name="Path 27315"
-                  d="M74.805,456.151l40-40-40-40"
-                  transform="translate(457.565 -73.391) rotate(90)"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                />
-              </svg>
-            </div> */}
+          
             <div className="flex justify-center mt-5">
            
     <button onClick={handleScroll}>
@@ -446,12 +402,14 @@ export default function Home() {
         width="82.828"
         height="42.414"
         viewBox="0 0 82.828 42.414"
-        whileHover={{ scale: 1.2 }}
+        // whileHover={{scale:"1.3"}}
         style={{ cursor: "pointer" }}
-        initial={{ y: 0 }}
-        whileInView={{ y: [0, -10, 0] }} // Move up and down
+       
+        
+          initial={{ y: 0 }}
+         whileInView={{y:[0, -10, 0,-10,0,-10,0,-10]} } // Move up and down
         transition={{
-          y: { duration: 1, yoyo: Infinity, ease: "easeInOut" }
+          y: { duration: .1, yoyo: Infinity, ease: "easeInOut" }
         }} // Continuous up and down movement
       >
         <path
@@ -466,155 +424,23 @@ export default function Home() {
           strokeWidth="2"
         />
       </motion.svg>
+
+      
     </button>
+    
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <HeroSection />
 
-      <div className="second w-full bg-white mx-auto h-auto">
-  <div className="md:block">
-    <motion.p
-      initial={{ y: -100 }}
-      whileInView={{ y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: "2" }}
-      className="pt-10 text-center text-sm md:text-lg lg:text-lg"
-    >
-      A REAL ESTATE AND PROPERTY PLATFORM THAT IS CHANGING THE WORLD
-    </motion.p>
-    <motion.div
-      initial={{ x: -500 }}
-      whileInView={{ x: 0 }}
-      transition={{ duration: "2" }}
-      className="text flex flex-col mt-10 px-4 md:px-8"
-    >
-      <h1 className="text-lg flex justify-center md:justify-start xs:text-xl md:text-2xl lg:text-3xl text-black">
-        A REVOLUTIONARY PLATFORM
-      </h1>
-      <h2 className="text-lg flex justify-center md:justify-start xs:text-xl md:text-3xl lg:text-5xl text-black">
-        ENTRIES - SELLERS
-      </h2>
-      <h3 className="text-xl flex justify-center md:justify-start xs:text-3xl md:text-4xl lg:text-6xl text-black">
-        WORLDWIDE
-      </h3>
-    </motion.div>
-
-    <motion.div
-      initial={{ x: 600 }}
-      whileInView={{ x: 0 }}
-      transition={{ duration: "2" }}
-      className="text-center lg:text-left px-4 md:px-8"
-    >
-      <div className="logo flex justify-center md:justify-end pt-20 md:pt-10 mt-6 md:mt-0">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="280"
-          height="80"
-          viewBox="0 0 589.596 144.239"
-          className="md:block lg:flex"
-        >
-          <g
-            id="Group_4743"
-            data-name="Group 4743"
-            transform="translate(-56.415 -116.364)"
-          >
-            <path
-              id="Path_1"
-              data-name="Path 1"
-              d="M238.724,236.061v-3.019a46.788,46.788,0,0,0-3.137-14.276c-3.463-8.326-9.3-16.152-14.265-24.431-9.2-15.364-19.559-33.113-28.818-48.591C184.88,133,177.77,116.621,158.839,116.367c-19.687-.26-26.235,16.468-33.38,28.554C102.774,183.284,56.415,260.5,56.415,260.5h21.4s44.23-75.316,66.188-113.38c2.808-4.867,8.375-11.254,14.837-11.254,9.8,0,14.709,11.228,19.115,18.94,11.8,20.664,23.171,40.439,34.236,60.4,3.48,6.274,10.545,14.537,5.706,23.059-3.155,5.561-9.516,5.217-18.543,5.217-.014.144-87.3,0-87.3,0V260.5h79.312s18.675.547,26.249-.824C230.137,257.409,236.945,248.06,238.724,236.061Z"
-              transform="translate(0 0)"
-            />
-            <path
-              id="Path_2"
-              data-name="Path 2"
-              d="M99.743,140.9v3.022A46.769,46.769,0,0,0,102.88,158.2c3.463,8.329,9.3,16.151,14.265,24.434,9.2,15.361,19.555,33.113,28.814,48.591,7.626,12.746,14.733,29.12,33.668,29.374,19.687.264,26.235-16.465,33.38-28.55,22.685-38.367,69.044-115.574,69.044-115.574h-21.4s-44.23,75.313-66.191,113.379c-2.8,4.867-8.372,11.255-14.833,11.255-9.807,0-14.712-11.228-19.115-18.943-11.8-20.661-23.171-40.435-34.236-60.4-3.48-6.278-10.545-14.537-5.706-23.06,3.155-5.561,9.512-5.22,18.543-5.22.01-.14,87.3,0,87.3,0V116.473H147.1s-18.674-.547-26.249.821C108.33,119.558,101.521,128.908,99.743,140.9Z"
-              transform="translate(106.873 0.001)"
-            />
-            <path
-              id="Path_3"
-              data-name="Path 3"
-              d="M312.885,236.061v-3.019a46.782,46.782,0,0,0-3.137-14.276c-3.463-8.326-9.3-16.152-14.265-24.431-9.2-15.364-19.555-33.113-28.814-48.591C259.042,133,251.935,116.621,233,116.367c-19.687-.26-26.235,16.468-33.38,28.554C176.935,183.284,130.576,260.5,130.576,260.5h21.4s44.231-75.316,66.191-113.38c2.808-4.867,8.372-11.254,14.834-11.254,9.807,0,14.712,11.228,19.115,18.94,11.8,20.664,23.171,40.439,34.236,60.4,3.484,6.274,10.545,14.537,5.706,23.059-3.155,5.561-9.512,5.217-18.543,5.217-.01.144-87.3,0-87.3,0V260.5h79.316s18.671.547,26.246-.824C304.3,257.409,311.106,248.06,312.885,236.061Z"
-              transform="translate(182.926 0)"
-            />
-            <path
-              id="Path_4"
-              data-name="Path 4"
-              d="M173.9,140.9v3.022a46.769,46.769,0,0,0,3.137,14.273c3.463,8.329,9.308,16.151,14.265,24.434,9.2,15.361,19.559,33.113,28.818,48.591,7.623,12.746,14.733,29.12,33.664,29.374,19.687.264,26.236-16.465,33.38-28.55,22.686-38.367,69.044-115.574,69.044-115.574h-21.4s-44.23,75.313-66.188,113.379c-2.808,4.867-8.375,11.255-14.837,11.255-9.8,0-14.709-11.228-19.115-18.943-11.8-20.661-23.167-40.435-34.236-60.4-3.481-6.278-10.546-14.537-5.706-23.06,3.155-5.561,9.516-5.22,18.546-5.22.01-.14,87.3,0,87.3,0V116.473H221.265s-18.675-.547-26.249.821C182.491,119.558,175.683,128.908,173.9,140.9Z"
-              transform="translate(289.798 0.001)"
-            />
-          </g>
-        </svg>
-      </div>
-      <div className="text-2 flex flex-col justify-center text-right md:justify-end mt-8 px-4 md:px-8">
-        <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-          CONNECTING USERS FROM ACROSS THE GLOBE
-        </h1>
-        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-          TO FACILITATE LIFE'S MOST IMPORTANT
-        </h2>
-        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-          PERSONAL TRANSACTIONS
-        </h3>
-      </div>
-    </motion.div>
-
-    <div className="text-3 flex justify-center md:justify-start mt-10 px-4 md:px-8">
-      <motion.div
-        initial={{ x: -500 }}
-        whileInView={{ x: 0 }}
-        transition={{ duration: 2 }}
-      >
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl text-black">
-          THE BEST OF THE BEST
-        </h1>
-        <h2 className="pt-4 sm:pt-6 lg:pt-10 text-base sm:text-lg md:text-xl lg:text-2xl">
-          A COMBINATION OF AUTOMATION AND MANUAL CURATION. OUR PRO AGENTS
-        </h2>
-        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-          AND MODERATION TEAMS SELECT THE HIGHEST QUALITY LISTINGS ON THE
-          MARKET
-        </h2>
-        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-          FROM ACROSS THE WORLD.
-        </h2>
-      </motion.div>
-    </div>
-    <div className="Scroll-icon flex justify-center mt-5">
-      <button onClick={handleScroll}>
-        <motion.svg
-          whileHover={{ scale: 1.2 }}
-          style={{ cursor: "pointer" }}
-          initial={{ y: 0 }}
-          animate={{ y: [0, -10, 0] }}
-          viewport={{ once: false }}
-          transition={{
-            y: { duration: 1, yoyo: Infinity, ease: "easeInOut" },
-          }}
-          xmlns="http://www.w3.org/2000/svg"
-          width="82.828"
-          height="42.414"
-          viewBox="0 0 82.828 42.414"
-        >
-          <path
-            id="Path_27315"
-            data-name="Path 27315"
-            d="M74.805,456.151l40-40-40-40"
-            transform="translate(457.565 -73.391) rotate(90)"
-            fill="none"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-          />
-        </motion.svg>
-      </button>
-    </div>
-  </div>
-</div>
+     
+   <section>
+    <SecondSection />
+   </section>
 
 
-      <div className=" third w-full bg-white w-full  mx-auto      h-[600px]">
+      {/* <div className=" third w-full bg-white w-full  mx-auto      h-[600px]">
         <div className="heading md:block pt-20 ">
           <motion.h1
             initial={{ x: -500 }}
@@ -627,172 +453,40 @@ export default function Home() {
         </div>
         <div className="slider-container pl-10   pt-20 space-x-4">
           <Slider {...settings}>
-            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
-              <Image src="/1.png" width={250} height={250} alt="image" />
-            </motion.div>
-            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
-              <Image src="/2.png" width={250} height={250} alt="image" />
-            </motion.div>
-            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
-              <Image src="/3.png" width={250} height={250} alt="image" />
-            </motion.div>
-            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
-              <Image src="/4.png" width={250} height={250} alt="image" />
-            </motion.div>
-            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
-              <Image src="/5.png" width={250} height={250} alt="image" />
-            </motion.div>
-            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}   className="ml-5">
-              <Image src="/6.png" width={250} height={250} alt="image" />
-            </motion.div>
-            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270 }} whileInView={{y:0}}  className="ml-5">
-              <Image src="/7.png" width={250} height={250} alt="image" />
-            </motion.div>
-            <motion.div initial={{y:200}} transition={{type:"spring", stiffness:1000, rotate:270  }} whileInView={{y:0}}  className="ml-5">
-              <Image src="/8.png" width={250} height={250} alt="image" />
-            </motion.div>
+          {imagesArray.map((img, index) => (
+          <div key={index} className="px-6 max-w-[466px]">
+            <Card key={index} img={img} />
+          </div>
+        ))}
           </Slider>
         </div>
         
        
-      </div>
-      <div className="forth w-full bg-white h-[720px] sm:h-[820px] xs:h-[900px]">
-        <motion.div
-          initial={{ y: 50 ,opacity:0}}
-          whileInView={{ y: 0,opacity:1 }}
-          transition={{ duration: .5  }}
-          className="heading"
-        >
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl text-center">
-            ONE PLATFORM FOR ALL PREMIUM LISTINGS
-          </h1>
-        </motion.div>
-        <div className="sub-heading flex justify-center mt-10 md:display:block">
-          <motion.h1    initial={{ y: 50 ,opacity:0}}
-          whileInView={{ y: 0,opacity:1 }}
-          transition={{ duration: .5  }}className="text-2xl sm:text-3xl lg:text-4xl text-black">
-            UNLIMITED POTENTIAL
-          </motion.h1>
-        </div>
+      </div> */}
+      <section>
+        <ThirdSection />
+      </section>
+     
+      <section>
+        <FourthSection />
+      </section>
+      <section>
+      <FifthSection />
+      </section>
 
-        <div className="main flex flex-col lg:flex-row justify-between mt-10 lg:mt-40 mx-5 lg:mx-20">
-          <motion.div
-             
-            initial={{ x: -100 }}
-            whileInView={{ x: 0 }}
-            transition={{ duration: 1 }}
-            className="pt-10 lg:pt-14 flex flex-col items-center lg:items-start text-center lg:text-left"
-          >
-            <Image
-              src="/Zmo.png"
-              alt="picture"
-              className="dark:invert m-4 w-48 sm:w-64 md:w-72 lg:w-80"
-               sizes="(max-width: 640px) 12rem, (max-width: 768px) 16rem, (max-width: 1024px) 18rem, 20rem"
-              width={400}
-              height={100}
-            />
-            <h1 className="text-xl sm:text-2xl lg:text-3xl text-black mt-4">
-              ONE SOURCE
-            </h1>
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-black mt-2">
-              ENTRY TICKETS
-            </h2>
-            <p className="text-xs sm:text-sm lg:text-md text-black mt-2">
-              FOR ALL PREMIUM LISTINGS
-            </p>
-          </motion.div>
+      <section>
+      <SixthSection />
+      </section>
 
-          <motion.div 
-          
-            initial={{ x: 500}}
-            whileInView={{ x: 0 }}
-            transition={{dur: 1}}
-            
-            className="flex justify-center flex-col items-center lg:items-end pt-10 pb-20 mb-10 lg:mb-0"
-          >
-            <Image
-              src="/pic.svg"
-              alt="picture"
-              className="dark:invert m-4 w-48 sm:w-72 md:w-80 lg:w-96"
-              width={600}
-              height={800}
-              sizes="(max-width: 640px) 12rem, (max-width: 768px) 16rem, (max-width: 1024px) 18rem, 20rem"
-            />
+      <section>
+      <SeventhSection />
+      </section>
 
-            <p className="text-start xs:ml-40  lg:text-right lg:ml-80 mr-20 text-black">
-              LET YOUR DREAMS FIND YOU
-            </p>
-          </motion.div>
-        </div>
+      <section>
+      <EighthSection />
+      </section>
 
-        {/* <div className="flex justify-end mr-[60px] sm:justify-center   lg:justify-end mr-40  mt-[-45px] sm:mt-[-70px] lg:mt-[-70px]">
-    <p className="text-center text-black">LET YOUR DREAMS FIND YOU</p>
-  </div> */}
-      </div>
-
-      <div className="w-full flex-1 bg-boat bg-cover max-w-full h-[600px] mt-auto bg-center bg-no-repeat">
-        <motion.div
-          initial={{ y: -200 }}
-          whileInView={{ y: 0 }}
-          transition={{ duration: 1 }}
-          className="flex justify-center sm:justify-center md:justify-center lg:justify-end mr-4 lg:mr-20 pt-20"
-        >
-          <h1 className="text-white text-2xl lg:text-4xl text-center lg:text-right">
-            PERSONALIZED FOR YOU
-          </h1>
-        </motion.div>
-        <motion.div
-          initial={{ x: 500 }}
-          whileInView={{ x: 10 }}
-          transition={{ duration: 1 }}
-          className="text-white flex justify-center sm:justify-center md:justify-center lg:justify-end   md:text-left md:ml-[10%] lg:ml-[50%] lg:mr-4 mt-4 md:mt-0 lg:mt-8"
-        >
-          <h2 className="text-white  text-sm md:text-base ">
-            DELIVERING THOUSANDS OF PERSONALIZED ALERTS EVERYDAY OUR USERS CAN
-            BE FIRST IN LINE WHEN THAT OPPORTUNITY OF A LIFETIME IS HERE.
-          </h2>
-        </motion.div>
-        <div className="mt-20 flex justify-start ml-5 md:justify-start ml-20 lg:justify-end lg:mr-20">
-          <motion.svg
-            initial={{ x: 10 }}
-            whileInView={{ x: 50 }}
-            transition={{ duration: 1 }}
-            xmlns="http://www.w3.org/2000/svg"
-            width="248.759"
-            height="28"
-            viewBox="0 0 248.759 28"
-          >
-            <g
-              id="Group_4765"
-              data-name="Group 4765"
-              transform="translate(-164 -1645)"
-            >
-              <text
-                id="CREATE_USER_ID"
-                data-name="CREATE USER ID"
-                transform="translate(356 1668)"
-                fill="#fff"
-                font-size="21"
-                font-family="SegoeUI, Segoe UI"
-                letter-spacing="0.15em"
-              >
-                <tspan x="-191.385" y="0">
-                  CREATE USER ID
-                </tspan>
-              </text>
-              <path
-                id="Path_7815"
-                data-name="Path 7815"
-                d="M346.385,120.239l1.419-1.421-6.618-6.612h41.022V110.2H341.187l6.618-6.612-1.419-1.421L337.34,111.2Z"
-                transform="translate(750.099 1770.239) rotate(180)"
-                fill="#fff"
-              />
-            </g>
-          </motion.svg>
-        </div>
-      </div>
-
-      <div className="6 w-full  bg-dots bg-cover    h-[600px]">
+      {/* <div className="6 w-full  bg-dots bg-cover    h-[600px]">
         <div className="container bg-dots bg-cover  mx-auto"></div>
         <div className="flex flex-col text-center pt-60 ">
           <motion.h1
@@ -819,52 +513,11 @@ export default function Home() {
           >
             BASED ACROSSED THE GLOBE , MAKING UP 23 DIFFERENT NATIONALITIES.
           </motion.h5>
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="886"
-            height="150"
-            viewBox="0 0 886 177"
-          >
-            <g
-              id="Group_4768"
-              data-name="Group 4768"
-              transform="translate(-517 -5474)"
-            >
-              <text
-                id="GLOBAL_vision"
-                data-name="GLOBAL vision"
-                transform="translate(960 5517)"
-                font-size="40"
-                font-family="SegoeUI, Segoe UI"
-                letter-spacing="0.15em"
-              >
-                <tspan x="-176.518" y="0">
-                  GLOBAL VISION
-                </tspan>
-              </text>
-              <text
-                id="With_a_remote_culture_diversity_is_naturally_in_our_DNA._Based_across_THE_GLOBE_making_up_over_23_different_nationalities."
-                data-name="With a remote culture, diversity is naturally in our DNA.
-Based across THE GLOBE, making up over 23 different nationalities."
-                transform="translate(960 5606)"
-                font-size="20"
-                font-family="SegoeUI, Segoe UI"
-                letter-spacing="0.15em"
-              >
-                <tspan x="-378.839" y="0">
-                  WITH A REMOTE CULTURE, DIVERSITY IS NATURALLY IN OUR DNA.
-                </tspan>
-                <tspan x="-442.012" y="40">
-                  BASED ACROSS THE GLOBE, MAKING UP OVER 23 DIFFERENT
-                  NATIONALITIES.
-                </tspan>
-              </text>
-            </g>
-          </svg> */}
+       
         </div>
-      </div>
+      </div> */}
 
-      <div className=" 7 w-full flex-1 max-w-full h-[600px]">
+      {/* <div className=" 7 w-full flex-1 max-w-full h-[600px]">
         <div className="flex flex-col   items-center ">
           <div className="flex-col ">
             <motion.div
@@ -926,9 +579,9 @@ Based across THE GLOBE, making up over 23 different nationalities."
             </motion.div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="8 w-full bg-blue bg-cover bg-center bg-no-repeat  max-w-full h-[600px]">
+      {/* <div className="8 w-full bg-blue bg-cover bg-center bg-no-repeat  max-w-full h-[600px]">
         <div className="flex flex-row">
           <div className="pt-[450px] flex justify-center lg:ml-10">
            <motion.div  initial={{ x: -300 }}
@@ -988,7 +641,7 @@ Based across THE GLOBE, making up over 23 different nationalities."
             </motion.svg>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
