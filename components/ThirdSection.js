@@ -76,7 +76,7 @@
 
 
 
-import Image from "next/image";
+
 import React, { useEffect, useRef } from "react";
 import SliderComponent from "./SliderComponent";
 import { useInView, motion } from "framer-motion";

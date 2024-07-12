@@ -1,6 +1,6 @@
 import { useInView, motion } from "framer-motion";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 
 const logoInitial = { opacity: 0, x: -100 };
 const headerInitial = { opacity: 0, y: -100 };

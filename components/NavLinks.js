@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useState, memo } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const initialNavObjs = { opacity: 0, x: 100 };
