@@ -6,8 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import ThirdSection from "../components/ThirdSection";
-
-
 import SecondSection from "../components/SecondSection";
 import FourthSection from "../components/ForthSection";
 import FifthSection from "../components/FifthSection";
