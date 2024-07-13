@@ -1,7 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 import Card from "./Card";
-
+import NextArrow from "./NextArrow";
+import PreviousArrow from "./PreviousArrow";
 
 const imagesArray = [
             { src: "/1.png", alt: "Diamonds" },
