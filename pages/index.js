@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <>
-        <main className="overflow-x-hidden">
+       <main className="overflow-x-hidden">
       <section className="h-screen">
         <HeroSection />
       </section>
