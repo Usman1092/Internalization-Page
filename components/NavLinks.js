@@ -1,3 +1,6 @@
+
+
+
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -22,8 +25,8 @@ const NavLinks = () => {
         );
         const data = await response.json();
         setData(data);
-        const apiUrl = `https://geolocation-db.com/json/`;
 
+        const apiUrl = `https://geolocation-db.com/json/`;
         const fetchCountry = await fetch(apiUrl);
         const countryData = await fetchCountry.json();
         const countryName = countryData.country_name;
@@ -38,25 +41,26 @@ const NavLinks = () => {
 
     fetchData();
 
-    const date = new Date();
-    const options = {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    };
-    const formattedDate = date.toLocaleDateString("en-UK", options);
-
-    setFormattedDate(formattedDate);
-    const updateTime = () => {
+    const updateDateTime = () => {
       const now = new Date();
-      setCurrentTime(
-        now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-      );
+      const options = {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      };
+      const formattedDate = now.toLocaleDateString("en-UK", options);
+      const formattedTime = now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+
+      setFormattedDate(formattedDate);
+      setCurrentTime(formattedTime);
     };
 
-    updateTime();
-    const intervalId = setInterval(updateTime, 60000);
+    updateDateTime();
+    const intervalId = setInterval(updateDateTime, 60000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -79,7 +83,7 @@ const NavLinks = () => {
               transition={{ duration: 0.5, ease: "easeOut", delay: 2.7 }}
               className="uppercase"
             >
-              {data?.city || "LONDON"}
+              {data?.city || "PindiGheb"}
             </motion.p>
             <motion.p
               initial={{ opacity: 0, x: 15 }}
@@ -147,3 +151,4 @@ const NavLinks = () => {
 };
 
 export default NavLinks;
+
