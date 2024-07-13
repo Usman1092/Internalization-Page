@@ -105,7 +105,7 @@ import {
               onClick={handleScroll}
             >
               <Image
-                src="/dropdow.png"
+                src="/black_arrow.png"
                 alt="Scroll Down Arrow Image"
                 quality={100}
                 width={83}

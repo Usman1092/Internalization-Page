@@ -40,7 +40,7 @@ const HeroSection = () => {
           className="relative block w-[14px] h-[10px] pointer-events-none select-none"
         >
           <Image
-            src="/arrow.png"
+            src="/back_arrow.png"
             alt="Left Logo 1 Image"
             fill
           />
