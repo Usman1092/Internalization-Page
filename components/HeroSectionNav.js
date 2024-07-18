@@ -22,7 +22,7 @@ const HeroSectionNav = () => {
             alt="Left Logo 1 Image"
             width={65.96}
             height={50}
-            className="w-[40px] xl:w-[46px] 2xl:w-[52.96px] 3xl:w-[65.96px]"
+            className="w-[35px] xl:w-[35px] 2xl:w-[45px] 3xl:w-[65px]"
           />
         </motion.div>
 
@@ -37,7 +37,7 @@ const HeroSectionNav = () => {
             alt="Left Logo 2 Image"
             width={184.9}
             height={50}
-            className="w-[112px] xl:w-[130px] 2xl:w-[153px] 3xl:w-[184.9px]"
+            className="w-[100px] xl:w-[120px] 2xl:w-[120px] 3xl:w-[182px]"
           />
         </motion.div>
         <motion.h1
@@ -62,13 +62,15 @@ const HeroSectionNav = () => {
             alt="Center Logo Image"
             width={204.38}
             height={50}
-            className="w-[131px] xl:w-[149px] 2xl:w-[178px] 3xl:w-[204.38px] h-auto"
+            className="w-[128px] xl:w-[140px] 2xl:w-[150px] 3xl:w-[204.38px] h-auto"
           />
+          
         </motion.div>
       </div>
 
       {/* right content */}
       <div className="flex flex-row items-center justify-end w-1/2 lg:w-1/3 space-x-7 md:space-x-10 lg:space-x-14 2xl:space-x-20">
+        
         <NavLinks />
       </div>
     </div>

@@ -31,7 +31,7 @@ const Card = ({ img }) => {
         viewport={{ once: false, amount: 0.8 }}
       >
         <img src={img.src} alt={img.alt} className="w-full h-auto" />
-        <p className="absolute w-full justify-center items-center pb-4 text-white uppercase flex text-[9px] lg:text-[11px] xl:text-[14px] 3xl:text-[24px] tracking-[3px]">
+        <p className="absolute w-full justify-center items-center pb-4 text-white text-2xl uppercase flex text-[9px] lg:text-[11px] xl:text-[14px] 3xl:text-[24px] tracking-[3px]">
           {img.alt}
         </p>
       </motion.div>

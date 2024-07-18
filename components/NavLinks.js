@@ -4,11 +4,15 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import LanguageSwitcher from "../components/LanguageSwitcher ";
+import i18n from "./I18n";
+
 
 const initialNavObjs = { opacity: 0, x: 100 };
 const animateNavObjs = { opacity: 1, x: 0 };
 
 const NavLinks = () => {
+  
   const [data, setData] = useState(null);
   const [currentTime, setCurrentTime] = useState("00:00");
   const [countryData, setCountryData] = useState({
@@ -17,11 +21,12 @@ const NavLinks = () => {
   });
   const [formattedDate, setFormattedDate] = useState("");
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://ipinfo.io/json?token=${process.env.NEXT_PUBLIC_IP_TOKEN}`
+          `https://ipinfo.io/json`
         );
         const data = await response.json();
         setData(data);
@@ -65,6 +70,11 @@ const NavLinks = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+
+
+  
+
+ 
   return (
     <>
       <div className="relative flex flex-row items-center order-1 space-x-2 text-right">
@@ -109,13 +119,14 @@ const NavLinks = () => {
           transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
           className="relative order-2 mb-0 pointer-events-none select-none"
         >
-          <Image
+          {/* <Image
             src={countryData.flag}
             alt="Flag Image"
             width={37.31}
             height={25}
             className="w-[33px] 2xl:w-[35px] 3xl:w-[37.31px]"
-          />
+          /> */}
+          <LanguageSwitcher />
         </motion.div>
       </div>
       <motion.div
@@ -151,4 +162,20 @@ const NavLinks = () => {
 };
 
 export default NavLinks;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,6 +1,7 @@
 import { useInView, motion } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
+import { useTranslation } from "next-i18next";
 
 const headerInitial = { opacity: 0, y: -100 };
 const textOneInitial = { opacity: 0, x: -100 };
@@ -9,6 +10,7 @@ const textTwoInitial = { opacity: 0, x: 100 };
 const textTwoAnimation = { opacity: [0, 1], x: [100, 0] };
 
 const SixthSection = () => {
+  const {t}=useTranslation();
   const containerRef = useRef();
   const containerIsInView = useInView(containerRef, {
     amount: 0.5,
@@ -49,7 +51,7 @@ const SixthSection = () => {
             }}
             className="text-[20px] lg:text-[30px] 2xl:text-[35px] 3xl:text-[40px] font-medium tracking-[3px] lg:tracking-[5px] mb-8"
           >
-            GLOBAL VISION
+            {t('GLOBAL')} 
           </motion.p>
           <motion.p
             initial={textOneInitial}
@@ -57,7 +59,7 @@ const SixthSection = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
             className="text-[10px] lg:text-[15px] 2xl:text-[17.5px] 3xl:text-[20px] tracking-[1.5px] lg:tracking-[3px] mb-2"
           >
-            WITH A REMOTE CULTURE, DIVERSITY IS NATURALLY IN OUR DNA.
+              {t('WITH')}   
           </motion.p>
           <motion.p
             initial={textTwoInitial}
@@ -65,7 +67,7 @@ const SixthSection = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}
             className="text-[10px] lg:text-[15px] 2xl:text-[17.5px] 3xl:text-[20px] tracking-[1.5px] lg:tracking-[3px] "
           >
-            BASED ACROSS THE GLOBE, MAKING UP OVER 23 DIFFERENT NATIONALITIES.
+             {t('BASED')}  
           </motion.p>
         </div>
       </div>

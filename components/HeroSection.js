@@ -3,11 +3,13 @@ import React from "react";
 import HeroSectionNav from "./HeroSectionNav";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 const initialBodyText = { opacity: 0, x: -100 };
 const animateBodyText = { opacity: 1, x: 0 };
 
 const HeroSection = () => {
+  const {t}=useTranslation();
     const handleScroll = () => {
         window.scrollBy({
           top: 640,
@@ -32,28 +34,40 @@ const HeroSection = () => {
 
       {/* BODY SECTION  */}
 
-      <div className="absolute flex-row justify-start items-center hidden w-full px-4 md:px-[40px] 2xl:px-[60px] space-x-3 lg:top-[115px] 2xl:top-[135px] 3xl:top-[177px] lg:flex">
-        <motion.div
+      <div className="absolute  flex-row  justify-start items-center hidden w-full px-4 md:px-[40px] 2xl:px-[60px] space-x-3 lg:top-[115px] 2xl:top-[135px] 3xl:top-[177px] lg:flex">
+      
+         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={animateBodyText}
           transition={{ duration: 0.5, ease: "easeOut", delay: 1.2 }}
-          className="relative block w-[14px] h-[10px] pointer-events-none select-none"
+          whileHover={{cursor: "pointer"}}
+          className="relative  block w-[14px] h-[10px]   select-none"
         >
+         
           <Image
             src="/back_arrow.png"
             alt="Left Logo 1 Image"
             fill
           />
+        
+    
         </motion.div>
         <motion.div
           initial={initialBodyText}
           animate={animateBodyText}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          whileHover={{cursor: "pointer"}}
           className="lg:text-[12px] xl:text-base 3xl:text-[22px] text-white"
         >
-          <p>BACK</p>
-        </motion.div>
+          <button className="cursor-pointer">BACK</button>
+         
+        </motion.div> 
+        
       </div>
+
+
+
+
 
       <div className="relative flex flex-col items-start justify-center w-full px-4 md:px-[40px] 2xl:px-[60px] text-white space-y-3 2xl:space-y-4">
         <div className="3xl:space-y-[-10px]">
@@ -63,7 +77,7 @@ const HeroSection = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             className="text-[20px] md:text-[25px] xl:text-[30px] 3xl:text-[40px] tracking-[5px]"
           >
-            DISCOVER
+         {t('DISCOVER')}
           </motion.p>
           <motion.p
             initial={initialBodyText}
@@ -108,7 +122,7 @@ const HeroSection = () => {
               alt="Scroll Down Arrow Image"
               width={83}
               height={0}
-              className="w-[40px] md:w-[60px] 2xl:w-[83px]"
+              className="w-[20px] md:w-[30px] 2xl:w-[40px]"
             />
           </Link>
         </motion.div>

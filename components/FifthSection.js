@@ -1,6 +1,7 @@
 import { useInView, motion } from "framer-motion";
 import Image from "next/image";
 import React, {  useRef } from "react";
+import { useTranslation } from "next-i18next";
 
 const logoInitial = { opacity: 0, x: -100 };
 const headerInitial = { opacity: 0, y: -100 };
@@ -13,6 +14,7 @@ const arrowInitial = { x: -5 };
 const arrowAnimation = { x: [-5, 0] };
 
 const FifthSection = () => {
+  const { t } = useTranslation();
   const containerRef = useRef();
   const containerIsInView = useInView(containerRef, {
     amount: 0.5,
@@ -62,7 +64,7 @@ const FifthSection = () => {
               transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
               className="text-[13px] lg:text-[17px] xl:text-[23px] 2xl:text-[31px] 3xl:text-[40px] text-left tracking-[5px]"
             >
-              PERSONALISED FOR YOU
+             {t('PERSONALISED')}  
             </motion.p>
             <motion.p
               initial={textInitial}
@@ -70,8 +72,8 @@ const FifthSection = () => {
               transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
               className="text-[9px] lg:text-[9px] xl:text-[12px] 2xl:text-[15px] 3xl:text-[20px] sm:text-justify w-full mt-5 opacity-60 tracking-[2px] 2xl:tracking-[3px] leading-[20px] lg:leading-[30px] 3xl:leading-[40px]"
             >
-              DELIVERING THOUSANDS OF PERSONALISED ALERTS EVERYDAY, OUR USERS
-              CAN BE FIRST IN LINE WHEN THAT OPPERTUNITY OF A LIFETIME IS HERE.
+             {t('DELIVERING')}  
+            
             </motion.p>
           </div>
           <div className="order-2 md:relative flex items-end justify-start md:justify-end w-full h-full pb-10 md:items-center px-4 md:px-0 md:right-[40px] 2xl:right-[60px]">
@@ -82,7 +84,7 @@ const FifthSection = () => {
               className="flex items-center space-x-3"
             >
               <p className="text-white whitespace-nowrap text-[9px] lg:text-[9px] xl:text-[12px] 2xl:text-[15px] 3xl:text-[20px] order-1 tracking-[3px] text-right">
-                CREATE USER ID
+              {t('CREATE')}   
               </p>
               <motion.div
                 initial={arrowInitial}
