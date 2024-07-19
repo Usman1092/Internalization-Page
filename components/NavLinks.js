@@ -1,18 +1,16 @@
-
-
-
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import LanguageSwitcher from "../components/LanguageSwitcher ";
 import i18n from "./I18n";
-
+import { useTranslation } from "next-i18next";
 
 const initialNavObjs = { opacity: 0, x: 100 };
 const animateNavObjs = { opacity: 1, x: 0 };
 
 const NavLinks = () => {
-  
+  const { t } = useTranslation();
+
   const [data, setData] = useState(null);
   const [currentTime, setCurrentTime] = useState("00:00");
   const [countryData, setCountryData] = useState({
@@ -21,13 +19,10 @@ const NavLinks = () => {
   });
   const [formattedDate, setFormattedDate] = useState("");
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `https://ipinfo.io/json`
-        );
+        const response = await fetch(`https://ipinfo.io/json`);
         const data = await response.json();
         setData(data);
 
@@ -70,15 +65,10 @@ const NavLinks = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-
-
-  
-
- 
   return (
     <>
-      <div className="relative flex flex-row items-center order-1 space-x-2 text-right">
-        <div className="relative hidden lg:flex flex-col w-auto text-white order-1 text-[10px] xl:text-[12px] 2xl:text-[13px] 3xl:text-[14px]">
+      <div className=" flex flex-row  items-center order-1 mr-10 space-x-4 text-right">
+        <div className="flex flex-row  hidden lg:flex flex-col w-auto text-white order-1 text-[10px] xl:text-[12px] 2xl:text-[13px] 3xl:text-[14px]">
           <div className="flex flex-row w-auto space-x-2 justify-end tracking-[0.5px]">
             <motion.p
               initial={{ opacity: 0, x: 15 }}
@@ -117,7 +107,7 @@ const NavLinks = () => {
           initial={initialNavObjs}
           animate={animateNavObjs}
           transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
-          className="relative order-2 mb-0 pointer-events-none select-none"
+          className="flex  order-2 mb-0 select-none"
         >
           {/* <Image
             src={countryData.flag}
@@ -129,53 +119,41 @@ const NavLinks = () => {
           <LanguageSwitcher />
         </motion.div>
       </div>
-      <motion.div
-        initial={initialNavObjs}
-        animate={animateNavObjs}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
-        className="relative order-2 py-0"
-      >
-        <Image
-          src="/bag.png"
-          alt="Bag icon Image"
-          width={20.89}
-          height={25}
-          className="w-[18px] 2xl:w-[19px] 3xl:w-[20.89px]"
-        />
-      </motion.div>
-      <motion.div
-        initial={initialNavObjs}
-        animate={animateNavObjs}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-        className="relative order-3 py-0"
-      >
-        <Image
-          src="/user.png"
-          alt="User Avatar Image"
-          width={20.59}
-          height={25}
-          className="w-[18px] 2xl:w-[19px] 3xl:w-[20.59px]"
-        />
-      </motion.div>
+
+      <div className=" flex flex-row mr-4 space-x-4 order-3 w-1/2">
+        {/* bag */}
+        <motion.div
+          initial={initialNavObjs}
+          animate={animateNavObjs}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
+          className="flex flex-row   py-0"
+        >
+          <Image
+            src="/bag.png"
+            alt="Bag icon Image"
+            width={18}
+            height={18}
+            className="flex flex-row  w-[18px] pt-4 pb-2 2xl:w-[19px] 3xl:w-[20.89px]"
+          />
+        </motion.div>
+        {/* user */}
+        <motion.div
+          initial={initialNavObjs}
+          animate={animateNavObjs}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          className="relative z-auto order-3 py-0"
+        >
+          <Image
+            src="/user.png"
+            alt="User Avatar Image"
+            width={20.59}
+            height={25}
+            className=" flex flex-row w-[18px] pt-5 2xl:w-[19px] 3xl:w-[20.59px]"
+          />
+        </motion.div>{" "}
+      </div>
     </>
   );
 };
 
 export default NavLinks;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

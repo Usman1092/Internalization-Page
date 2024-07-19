@@ -8,11 +8,12 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "bg-bg1":"url('/grey-bg.png');",
+        // "bg-bg1":"url('/grey-bg.png');",
         "boat":"url('/boat.png');",
         "dots":"url('/dots.png');",
         "blue":"url('/blue.png');",
         "car":"url('/car.png');",
+        "grey":"url('/Grey-bg.png');",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",

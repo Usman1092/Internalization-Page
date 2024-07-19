@@ -3,22 +3,19 @@ import Slider from "react-slick";
 import Card from "./Card";
 import NextArrow from "./NextArrow";
 import PreviousArrow from "./PreviousArrow";
-import { useTranslation } from "next-i18next";
 
-
+const imagesArray = [
+  { src: "/1.png", alt: "Real Estate " },
+  { src: "/2.png", alt: " Cars " },
+  { src: "/3.png", alt: "Yachts" },
+  { src: "/4.png", alt: "Watches " },
+  { src: "/5.png", alt: "Jets " },
+  { src: "/6.png", alt: "Private Islands" },
+  { src: "/7.png", alt: "Diamonds" },
+  { src: "/8.png", alt: "Travel The World" },
+];
 
 const SliderComponent = () => {
-  const { t } = useTranslation();
-  const imagesArray = [
-    { src: "/1.png", alt: t(' RealEstate') },
-    { src: "/2.png", alt: t(' Cars') },
-    { src: "/3.png", alt: t(' Yachts') },
-    { src: "/4.png", alt: t(' Watches') },
-    { src: "/5.png", alt: t(' Jets') },
-    { src: "/6.png", alt: t('PrivateIslands') },
-    { src: "/7.png", alt: t(' Diamonds') },
-    { src: "/8.png", alt: t('TravelTheWorld') },
-  ];
   const settings = {
     dots: false,
     infinite: true,
@@ -41,14 +38,12 @@ const SliderComponent = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          
         },
       },
     ],
